@@ -151,11 +151,11 @@ function CreateNotification() {
             </Row>
             <Form.Item name="type">
               <Radio.Group
-                defaultValue={1}
                 onChange={(e) =>
                   setType(e.target.value) || console.log("value", value)
                 }
                 value={value}
+                defaultValue={1}
               >
                 <Radio value={1}>Webinar</Radio>
                 <Radio value={2}>Other</Radio>

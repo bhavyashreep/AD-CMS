@@ -60,16 +60,45 @@ const actions = {
           image: url,
           id: key,
         };
+        // delete data.type
+        if (values.type === undefined) {
+          data.type = 1;
+        }
+
         console.log(values, key);
         try {
           let notifiRes;
+          let ispremium;
+          let expertid;
           if (values.webinar) {
+            webinarData.on("value", (snapshot) => {
+              if (snapshot.val() !== null) {
+                let responselist = Object.values(snapshot.val());
+                // setState({ webinarData: responselist });
+                // dispatch(actions.setSearchData(responselist));
+                console.log(responselist, "webinar");
+                for (let i = 0; i < responselist?.length; i++) {
+                  console.log("yesss");
+                  if (responselist[i].id === values?.webinar) {
+                    console.log("yesss2", responselist[i]);
+
+                    ispremium = responselist[i].premium;
+                    expertid = responselist[i].presentor;
+                  }
+                }
+              }
+            });
             notifiRes = await createNotification({
               title: values?.title,
               message: values?.description,
               webinar_id: values?.webinar,
               image_url: url,
               topic: "happybump",
+              message_data: {
+                webinar_id: values?.webinar,
+                ispremium: ispremium,
+                expertid: expertid,
+              },
             });
           } else {
             notifiRes = await createNotification({
@@ -78,6 +107,7 @@ const actions = {
               url: values?.url,
               image_url: url,
               topic: "happybump",
+              message_data: { url: values?.url },
             });
           }
           console.log("notifiRes", notifiRes);
@@ -90,7 +120,6 @@ const actions = {
           setState({ loader: false });
         } catch (error) {
           setState({ loader: false });
-
           logError(error);
         }
       }

@@ -14,7 +14,7 @@ import {
   service,
   report,
   subscription,
-  admin
+  admin,
 } from "../common/Assets/Icons";
 
 const MenuItems = ({ darkMode, topMenu, events }) => {
