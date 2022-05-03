@@ -7,32 +7,30 @@ import moment from "moment";
 import { useBannerStore } from "../store";
 import { logError } from "../../common/Utils";
 import { onEdit } from "../../../infrastructure/faculty";
-import ViewCards from "../../common/ViewCards"
-
+import ViewCards from "../../common/ViewCards";
 
 const { Option } = Select;
 
 const ViewBanner = (props) => {
   const [form] = Form.useForm();
-  const [{ viewVisible, singleRow, webinarData }, { onEdit, setVisible }] =
+  const [{ visible, singleRow, webinarData }, { onEdit, setVisible }] =
     useBannerStore();
-  console.log( props.webinar, "single course1");
-
+  console.log(props.webinar, "single course1");
 
   const getWebinarText = (id) => {
     for (let i = 0; i < props.webinar?.length; i++) {
       if (props.webinar[i].id === id) {
-        console.log("web id",id,props.webinar[i].id)
+        console.log("web id", id, props.webinar[i].id);
         return props.webinar[i].title;
       }
     }
-
-  }
+  };
+  console.log("single rowww",singleRow)
   return (
     <Modal
       type="primary"
       title="View Banners"
-      visible={viewVisible}
+      visible={visible}
       footer={[
         <div key="1" className="project-modal-footer-delete">
           <Button
@@ -59,22 +57,25 @@ const ViewBanner = (props) => {
       onCancel={() => setVisible(false)}
     >
       <div className="project-modal display">
-        {
-          singleRow?.type===1?<ViewCards label="Webinar" value={getWebinarText(singleRow?.webinar)} />:
+        {singleRow?.type === 1 ? (
+          <ViewCards
+            label="Webinar"
+            value={getWebinarText(singleRow?.webinar)}
+          />
+        ) : (
           <>
-           <ViewCards label="Title" value={singleRow?.title} />
-        <ViewCards label="Description" value={singleRow?.description} />
-        <ViewCards
-          label="Image"
-          value={<img src={singleRow?.image}></img>}
-        />
-        <ViewCards label="Type" value={singleRow?.type===1?"Webinar":"Other"} />
-
+            <ViewCards label="Title" value={singleRow?.title} />
+            {/* <ViewCards label="Description" value={singleRow?.description} /> */}
+            <ViewCards
+              label="Image"
+              value={<img src={singleRow?.image}></img>}
+            />
+            <ViewCards
+              label="Type"
+              value={singleRow?.type === 1 ? "Webinar" : "Other"}
+            />
           </>
-
-        }
-       
-        
+        )}
 
         {/* <ul>
           <li>Title</li>
