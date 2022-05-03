@@ -50,13 +50,14 @@ function EditBanner() {
   });
   const { profImageUrl, panImageUrl } = state;
   const [image, setimage] = useState({});
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState(singleRow?.image);
   const [type, setType] = useState();
 
   useEffect(() => {
     getWebinar();
     form.setFieldsValue(singleRow);
     if(singleRow?.type) setType(singleRow.type)
+    if(singleRow?.type) setImageUrl(singleRow.image)
   }, [singleRow]);
 
   const uploadButton = (loading) => {

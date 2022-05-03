@@ -32,12 +32,11 @@ const UserList = () => {
   const getWebinarText = (id) => {
     for (let i = 0; i < webinarData?.length; i++) {
       if (webinarData[i].id === id) {
-        console.log("web id",id,webinarData[i].id)
+        console.log("web id", id, webinarData[i].id);
         return webinarData[i].title;
       }
     }
-
-  }
+  };
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -53,8 +52,9 @@ const UserList = () => {
   const studentData = searchData?.map((student, index) => {
     return {
       key: index,
-      bannerType:student.type===1?"Webinar":"Other",
-      title:student.type===1?getWebinarText(student.webinar):student.title,
+      bannerType: student.type === 1 ? "Webinar" : "Other",
+      title:
+        student.type === 1 ? getWebinarText(student.webinar) : student.title,
       user: (
         <div className="user-info">
           <figcaption>
@@ -81,30 +81,30 @@ const UserList = () => {
             >
               <FeatherIcon icon="eye" size={16} />
             </Button>
-            {student?.type=== 2&& <Button
-              onClick={() => setEditVisible({ value: true, data: student })}
-              className="btn-icon"
-              type="info"
-              to="#"
-              shape="circle"
-            >
-              <FeatherIcon icon="edit" size={16} />
-            </Button>}
-           
+            {student?.type === 2 && (
+              <Button
+                onClick={() => setEditVisible({ value: true, data: student })}
+                className="btn-icon"
+                type="info"
+                to="#"
+                shape="circle"
+              >
+                <FeatherIcon icon="edit" size={16} />
+              </Button>
+            )}
+
             <Popconfirm
-             title="Are you sure to delete this webinar?"
-             onConfirm={() => {
-               onDelete(
-                student?.id,
-               );
-             }}
-             okText="Yes"
-             cancelText="No"
-           >
-             <Button className="btn-icon" type="danger" to="#" shape="circle">
-               <FeatherIcon icon="trash-2" size={16} />
-             </Button>
-           </Popconfirm>
+              title="Are you sure to delete this webinar?"
+              onConfirm={() => {
+                onDelete(student?.id);
+              }}
+              okText="Yes"
+              cancelText="No"
+            >
+              <Button className="btn-icon" type="danger" to="#" shape="circle">
+                <FeatherIcon icon="trash-2" size={16} />
+              </Button>
+            </Popconfirm>
           </>
         </div>
       ),
@@ -139,7 +139,6 @@ const UserList = () => {
             >
               <FeatherIcon icon="plus" size={16} /> New Banner
             </Button>,
-           
           ]}
         />
       </CardToolbox>
