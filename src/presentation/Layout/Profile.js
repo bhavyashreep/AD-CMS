@@ -13,19 +13,20 @@ const Profile = () => {
     const [email, setEmail] = useState("")
 
     useEffect(() => {
-        console.log("email", getStorageItem("email"))
-        getStorageItem("email").then((res) => {
-            console.log(res, "res");
-            setEmail(res)
-        });
+        // console.log("email", getStorageItem("email"))
+        // getStorageItem("email").then((res) => {
+        //     console.log(res, "res");
+        //     setEmail(res)
+        // });
     }, []);
 
     console.log("email in profile", email)
     const signOut = () => {
+        
         const signOutData = auth.signOut();
         console.log("signout", signOutData)
         console.log("signout", auth.currentUser)
-        removeStorageItem("token");
+        localStorage.removeItem("token");
         removeStorageItem("email");
         window.location.replace(routes.LOGIN);
 

@@ -2,23 +2,14 @@
 const routes = {
   INITIAL: "/",
   SIGNUP: "/signup",
-  DASHBOARD :"/dashboard",
-  STUDENTLIST :"/userlist",
-  FACULTYLIST :"/facultylist",
-  CALENDER : "/calender",
-  NOTIFICATION : "/notification",
-  COURSE : "/course",
-  BLOG : '/blog',
-  BLOGEXPANDED : '/blogExpanded',
-  WEBINAR:`/webinar`,
-  CATEGORY:`/category`,
+  // DASHBOARD :"/dashboard",
+  CUSTOMERLIST :"/customerlist",
+  REGIONLIST :"/regionlist",
+  PINCODELIST:"/pincodelist/:id",
   EXPERTS:`/experts`,
-  SERVICE:`/service`,
-  REVIEW:'/review',
-  REPORT:`/reports`,
-  SUBSCRIPTION:"/subscription",
-  ADMIN:"/admin",
-  BANNER:"/banners"
+  VIEWCUSTOMER:"/viewCustomer/:id",
+  PAYMENTLIST:"/paymentList",
+  AUTHLETTER:"/authLetter/:id/:index"
 };
 
 // Change initial route if required

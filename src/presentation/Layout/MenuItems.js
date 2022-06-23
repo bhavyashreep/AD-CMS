@@ -18,6 +18,8 @@ import {
 } from "../common/Assets/Icons";
 
 const MenuItems = ({ darkMode, topMenu, events }) => {
+  const { SubMenu } = Menu;
+
   const { path } = useRouteMatch();
 
   const pathName = window.location.pathname;
@@ -65,26 +67,42 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
       overflowedIndicator={<FeatherIcon icon="more-vertical" />}
       openKeys={openKeys}
     >
-      <Menu.Item
-        key="dashboard"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.DASHBOARD}>
-            <img src={dashboard} />
-          </NavLink>
-        }
+      <SubMenu
+        key="sub1"
+        // icon={<ContactSupportIcon style={{ marginRight: "10px" }} />}
+        title="Manage "
       >
-        <Link to={routes.DASHBOARD}>Dashboard</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="studenlist"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.STUDENTLIST}>
-            <img src={users} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.STUDENTLIST}>User</Link>
-      </Menu.Item>
+        <Menu.Item
+          key="Manage"
+          icon={
+            <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
+              <img src={users} />
+            </NavLink>
+          }
+        >
+          <Link to={routes.PAYMENTLIST}>Payment Manage</Link>
+        </Menu.Item>
+        <Menu.Item
+          key="Manage"
+          icon={
+            <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
+              <img src={users} />
+            </NavLink>
+          }
+        >
+          <Link to={routes.CUSTOMERLIST}>Customer Manage</Link>
+        </Menu.Item> <Menu.Item
+          key="Manage"
+          icon={
+            <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
+              <img src={users} />
+            </NavLink>
+          }
+        >
+          <Link to={routes.REGIONLIST}>Pincode Manage</Link>
+        </Menu.Item>
+      </SubMenu>
+
       <Menu.Item
         key="blog"
         icon={
@@ -93,99 +111,9 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
           </NavLink>
         }
       >
-        <Link to={routes.EXPERTS}>Experts</Link>
+        <Link to={routes.EXPERTS}>Profile</Link>
       </Menu.Item>
-      <Menu.Item
-        key="categories"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.CATEGORY}>
-            <img src={categories} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.CATEGORY}>Tag</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="course"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.WEBINAR}>
-            <img src={webinar} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.WEBINAR}>Webinars</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="review"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.REVIEW}>
-            <img src={review} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.REVIEW}>Reviews</Link>
-      </Menu.Item>
-
-      <Menu.Item
-        key="facultylist"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.NOTIFICATION}>
-            <img src={notification} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.NOTIFICATION}>Notifications</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="services"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.SERVICE}>
-            <img src={service} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.SERVICE}>Services</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="reports"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.REPORT}>
-            <img src={report} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.REPORT}>Reports</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="subscription"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.SUBSCRIPTION}>
-            <img src={subscription} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.SUBSCRIPTION}>Subscription</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="admin"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.ADMIN}>
-            <img src={admin} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.ADMIN}>Admin</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="banner"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.BANNER}>
-            <img src={admin} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.BANNER}>Banner Ads</Link>
-      </Menu.Item>
+      
     </Menu>
   );
 };

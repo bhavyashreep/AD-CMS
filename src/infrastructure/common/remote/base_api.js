@@ -1,23 +1,27 @@
 import axios from "axios";
 // import config from "../../../common/config";
+import {message} from "antd"
 
 const baseURL = process.env.REACT_APP_BASE_API;
 
-var token = sessionStorage.getItem("token");
+var token = localStorage.getItem("token");
+console.log("token",token);
 
 const base = (options, headerOptions) => {
   return axios({
     baseURL,
     headers: {
       Accept: "application/json",
-      auth:{
-        username:"rzp_test_Tjcrk8qFuhRupU",
-        password:"hOMkRg2WacfhUQqZKL663nAG"
-      },
       ...headerOptions,
+      Authorization: token ? `Bearer ${token}` : null,
     },
     ...options,
-  }).then((res) => res.data);
+  }).then((res) => res.data).catch((er)=>{
+    console.log(er.response.status,"error")
+    if(er.response.status!== 200){
+      message.warning(er?.response?.data?.message)
+    }
+  })
 };
 
 export const get = (url, params) => {

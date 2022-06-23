@@ -1,13 +1,19 @@
 import Styled from "styled-components";
 
 const Container = Styled.div`
+.ant-col-offset-8 {
+    margin-left:0 !important;
+}
+.ant-checkbox + span{
+    width:110px;
+}
     width : 100%;
     height: calc(100vh);
     display: flex;
     .ImageContainer{
         background: linear-gradient(0deg, #3777BC, #3777BC), linear-gradient(45deg, #5F63F2 0%, #FF69A5 100%);
         opacity:0.1;
-        width: 45%;
+        width: 55%;
         display : flex;
         flex-direction : column;
         align-items : flex-start;
@@ -27,7 +33,7 @@ const Container = Styled.div`
         }
     }
     .FormContainer{
-         width: 55%;
+        width:45%;
         display : flex;
         flex-direction : column;
         align-items : center;

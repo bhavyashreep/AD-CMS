@@ -118,7 +118,7 @@ export default class LayoutProvider extends Component {
                   }
                   to={routes.INITIAL}
                 >
-                  <img className="logo_main" src={logo} alt="" />
+                  {/* <img className="logo_main" src={logo} alt="" /> */}
                 </Link>
               </Col>
               <Col md={0} sm={18} xs={12}>
@@ -161,7 +161,7 @@ export default class LayoutProvider extends Component {
                   <Row>
                     <Col md={12} xs={24}>
                       <span className="admin-footer__copyright">
-                        Happy Bumps
+                       Home247
                       </span>
                     </Col>
                     <Col md={12} xs={24}>

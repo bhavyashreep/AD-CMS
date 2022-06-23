@@ -1,11 +1,9 @@
 import Styled from "styled-components";
 
 const OverviewCard = Styled.div`
-    width : 340px;
-    height: 480px;
     display : flex;
     flex-direction :column;
-    align-items :flex-start;
+    align-items :center;
     justify-content:center;
     h1{
         margin-bottom:0px;
@@ -14,9 +12,18 @@ const OverviewCard = Styled.div`
 `;
 const AuthWrapper = Styled.div`
   height: 100%;
-  padding-top:47px;
-
-
+  padding-top:88px;
+  .ant-input{
+    background: #FFFFFF !important;
+    border: 1px solid #D9D9D9;
+    border-radius: 2px;
+  }
+  .ant-form-vertical .ant-form-item{
+    margin-bottom:0;
+  }
+   .auth-form-action{
+    margin-bottom:0 !important;
+  }
   @media only screen and (max-width: 767px){
     text-align: center;
   }
@@ -31,11 +38,12 @@ const AuthWrapper = Styled.div`
   }
   button{
     &.btn-signin{
-      min-width: 280px;
-       border-radius: 13px;
+       width:100%;
+       border-radius: 2px;
        background:${({ theme }) => theme["primary-color"]};
        border:${({ theme }) => theme["primary-color"]};
-       width:185px
+       margin-top:24px;
+   
     }
     &.btn-create{
       border-radius: 8px;

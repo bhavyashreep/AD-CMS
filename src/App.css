@@ -27,6 +27,12 @@
 .App-link {
   color: #61dafb;
 }
+ .ant-layout-sider .ant-layout-sider-children .ant-menu .ant-menu-submenu-inline .ant-menu-item a{
+  padding-left: 0 !important;
+}
+.ant-menu-item a{
+  padding-left: 0 !important;
+}
 
 @keyframes App-logo-spin {
   from {
