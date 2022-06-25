@@ -1,46 +1,36 @@
 import {
-  getPaymentList,
-  getCustomerDetails,
-  // onSubmit,
-  // onDelete,
+ 
+  getProfileDetails,
+ 
   onEdit,
   onPropEdit,
   onImageDelete,
-} from "../../../infrastructure/payment";
+} from "../../../infrastructure/profile";
 import { logError } from "../../common/Utils";
 import { message } from "antd";
 import UserData from "../../../demoData/usersData.json";
 import firebase from "../../../config/api/firebase";
 
 const actions = {
-  // onSubmit:
-  //   (values) =>
-  //   async ({ setState, dispatch }) => {
-  //     try {
-  //       await onSubmit(values);
-  //       dispatch(actions.setVisible(false));
-  //       dispatch(actions.getCustomer());
-  //     } catch (error) {
-  //       logError(error);
+  
+  // setVisible:
+  //   (params, history) =>
+  //   async ({ setState }) => {
+  //     console.log("visible");
+  //     // setState({ viewVisible: params.value });
+  //     if (params?.id) {
+  //       const CustomerDet = await getCustomerDetails(params?.id);
+  //       console.log("customer details", CustomerDet);
+  //       setState({ singleRow: CustomerDet.data });
   //     }
+  //     params.history.push(`/viewCustomer/${params.id}`);
   //   },
-  setVisible:
-    (params, history) =>
-    async ({ setState }) => {
-      console.log("visible");
-      // setState({ viewVisible: params.value });
-      if (params?.id) {
-        const CustomerDet = await getCustomerDetails(params?.id);
-        console.log("customer details", CustomerDet);
-        setState({ singleRow: CustomerDet.data });
-      }
-      params.history.push(`/viewCustomer/${params.id}`);
-    },
-  customerDetails:
+  profileDetails:
     (params) =>
     async ({ setState }) => {
-      const CustomerDet = await getCustomerDetails(params);
-      setState({ singleRow: CustomerDet?.data });
+      const profileDet = await getProfileDetails(params);
+    logError("responseee",profileDet)
+      setState({ profile: profileDet?.data });
     },
 
   setVisibleCreate:
@@ -57,35 +47,6 @@ const actions = {
 
       setState({ viewVisibleEdit: params.value });
       setState({ editDetails: params.data });
-
-      // setState({ singleRow: params.data });
-    },
-  setSearchData:
-    (params) =>
-    ({ setState }) => {
-      setState({ searchData: params });
-    },
-  onfinish:
-    (values, image) =>
-    ({ setState, dispatch }) => {
-      const formdata = { ...values, image: image };
-      var form_data = new FormData();
-      for (var key in formdata) {
-        form_data.append(key, formdata[key]);
-      }
-      dispatch(actions.onSubmit(form_data));
-    },
-  getPayments:
-    () =>
-    async ({ setState, dispatch }) => {
-      try {
-        const paymentRes = await getPaymentList();
-        console.log("customer list", paymentRes.data);
-        setState({ paymentList: paymentRes.data });
-        dispatch(actions.setSearchData(paymentRes.data));
-      } catch (error) {
-        logError(error);
-      }
     },
   onEdit:
     (params, id) =>
@@ -97,51 +58,11 @@ const actions = {
       dispatch(actions.customerDetails(id));
       dispatch(actions.setVisibleEdit(false));
     },
-  onPropertyEdit:
-    (params, id) =>
-    ({ dispatch }) => {
-      // logError(params, "Edit value");
-      // var form_data = new FormData();
-      // for (var key in params) {
-      //   form_data.append(key, params[key]);
-      // }
-      // const editRes = onPropEdit(form_data, id);
-
-      // dispatch(actions.getCustomer());
-      // dispatch(actions.customerDetails(id));
-      // dispatch(actions.setVisibleEdit(false));
-    },
-  onImgDelete:
-    (prop_id, image_id, cus_id) =>
-    ({ dispatch }) => {
-      logError(prop_id, "Edit value");
-
-      const editRes = onImageDelete({ prop_id, image_id });
-      console.log("delete res", editRes);
-      dispatch(actions.customerDetails(cus_id));
-      dispatch(actions.setVisibleEdit(false));
-    },
+ 
  
 
-  // onDelete:
-  //   (params) =>
-  //   async ({ dispatch }) => {
-  //     try {
-  //       await onDelete(params);
-  //       message.success("Succesfully Deleted");
-  //       dispatch(actions.getCustomer());
-  //     } catch (error) {
-  //       logError(error);
-  //     }
-  //   },
-  switchChange:
-    (status, id) =>
-    async ({ setState }) => {
-      try {
-        console.log(status, "status");
-        firebase.database().ref(`/users`).child(id).update({ status: status });
-      } catch (error) {}
-    },
+
+  
 };
 
 export default actions;

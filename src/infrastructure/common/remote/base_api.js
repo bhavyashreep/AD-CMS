@@ -7,7 +7,7 @@ const baseURL = process.env.REACT_APP_BASE_API;
 var token = localStorage.getItem("token");
 console.log("token",token);
 
-const base = (options, headerOptions) => {
+const base = async(options, headerOptions) => {
   return axios({
     baseURL,
     headers: {

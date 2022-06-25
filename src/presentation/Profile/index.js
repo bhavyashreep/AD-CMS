@@ -6,7 +6,7 @@ import { PageHeader } from "../common/UI/page-headers/page-headers";
 import { AutoComplete } from "../common/UI/autoComplete/autoComplete";
 import { Main, CardToolbox } from "../common/Style/styled";
 import { Button } from "../common/UI/buttons/buttons";
-import { usePaymentStore } from "./store";
+import { useProfileStore } from "./store";
 import Heading from "../common/UI/heading/heading";
 // import ViewCustomer from "./overview/ViewCustomer";
 // import CreateUser from "./overview/CreateUser";
@@ -16,7 +16,7 @@ import { useHistory } from "react-router-dom";
 const Profile= () => {
   let history = useHistory();
   const [
-    { customerList, searchData },
+    { customerList, profile },
     {
       setVisible,
       getPayments,
@@ -25,12 +25,12 @@ const Profile= () => {
       onDelete,
       setVisibleEdit,
       setVisibleCreate,
-      switchChange,
+      profileDetails,
     },
-  ] = usePaymentStore();
+  ] = useProfileStore();
   useEffect(() => {
     window.scroll(0, 0);
-    getPayments();
+    profileDetails();
   }, []);
   console.log(customerList, "cusss");
   const handleSearch = (searchText) => {
@@ -47,40 +47,21 @@ const Profile= () => {
       <CardToolbox>
         <PageHeader
           ghost
-          title="Payment Management"
+          title="Profile Management"
           subTitle={
             <>
-              <span className="title-counter">
-                {customerList?.length} Transations{" "}
-              </span>
-              <AutoComplete
-                onSearch={handleSearch}
-                placeholder="Search by Name"
-                width="100%"
-                patterns
-              />
+          
             </>
           }
-          // buttons={[
-          //   <Button
-          //     onClick={() => setVisibleCreate({ value: true })}
-          //     key="1"
-          //     type="primary"
-          //     size="default"
-          //   >
-          //     <FeatherIcon icon="plus" size={16} /> Add New User
-          //   </Button>,
-          // ]}
+        
         />
       </CardToolbox>
 
       <Main>
         <Row gutter={15}>
           <Col md={24}>
-            <div>
-              profile
-              </div>
-            {/* <CustomerTable usersTableData={customerData} /> */}
+           
+            <CustomerTable profile={profile} />
           </Col>
         </Row>
 

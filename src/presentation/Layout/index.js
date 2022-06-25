@@ -14,6 +14,7 @@ import Profile from "./Profile"
 const { Header, Footer, Sider, Content } = Layout;
 
 export default class LayoutProvider extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {

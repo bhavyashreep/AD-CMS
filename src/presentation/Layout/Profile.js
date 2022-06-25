@@ -4,33 +4,45 @@ import { UserOutlined } from '@ant-design/icons';
 import firebase from "../../config/api/firebase";
 import { setStorageItem, getStorageItem, removeStorageItem } from "../../infrastructure/common/local";
 import { routes } from "../common/Routes/routes";
+import { useProfileStore } from '../Profile/store';
 
 
 const auth = firebase.auth();
 
 
 const Profile = () => {
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("");
+
+    const [
+        { customerList, profile },
+        {
+          setVisible,
+          getPayments,
+          setSearchData,
+          onEdit,
+          onDelete,
+          setVisibleEdit,
+          setVisibleCreate,
+          profileDetails,
+        },
+      ] = useProfileStore();
 
     useEffect(() => {
-        // console.log("email", getStorageItem("email"))
-        // getStorageItem("email").then((res) => {
-        //     console.log(res, "res");
-        //     setEmail(res)
-        // });
-    }, []);
+        profileDetails()
+    }, [profileDetails]);
+   
 
-    console.log("email in profile", email)
+    console.log("email in profile", profile)
     const signOut = () => {
         
-        const signOutData = auth.signOut();
-        console.log("signout", signOutData)
-        console.log("signout", auth.currentUser)
+      
+ 
+    
        
       localStorage.removeItem("tokenTime")
        localStorage.removeItem("expireTime")
         localStorage.removeItem("token");
-        removeStorageItem("email");
+       
         window.location.replace(routes.LOGIN);
 
 
@@ -45,12 +57,12 @@ const Profile = () => {
                             backgroundColor: '#fde3cf',
                         }}
                     >
-                        {email?.substring(0, 1).toUpperCase()}
+                        {profile?.user?.first_name?.substring(0, 1).toUpperCase()}
                     </Avatar>
                 </div>
                 <div className="right">
                     <span className="email">
-                        {email}
+                   {profile?.user?.first_name+" "+profile?.user?.last_name}
                     </span>
                 </div>
             </div>
@@ -68,7 +80,7 @@ const Profile = () => {
                         color: '#f56a00',
                         backgroundColor: '#fde3cf',
                     }}>
-                    {email.substring(0, 1).toUpperCase()}
+                    {profile?.user?.first_name?.substring(0, 1).toUpperCase()}
                 </Avatar>
             </Dropdown>
         </div>

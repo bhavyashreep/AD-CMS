@@ -7,7 +7,8 @@ const initialState = {
   singleRow: {},
   viewVisibleEdit: false,
   VisibleCreate: false,
-  editDetails:null
+  editDetails:null,
+  profile:{}
 };
 
 export default initialState;

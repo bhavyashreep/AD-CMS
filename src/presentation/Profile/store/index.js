@@ -2,12 +2,12 @@ import { createStore, createHook } from "react-sweet-state";
 import initialState from "./initialState";
 import actions from "./actions";
 
-const PaymentStore = createStore({
-  name: "PaymentStore",
+const ProfileStore = createStore({
+  name: "ProfileStore",
   initialState,
   actions,
 });
 
-export const usePaymentStore = createHook(PaymentStore, {
+export const useProfileStore = createHook(ProfileStore, {
   selector: (state) => state,
 });

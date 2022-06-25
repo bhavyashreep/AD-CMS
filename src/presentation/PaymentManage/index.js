@@ -12,6 +12,7 @@ import Heading from "../common/UI/heading/heading";
 // import CreateUser from "./overview/CreateUser";
 // import EditUser from "./overview/EditUser";
 import { useHistory } from "react-router-dom";
+import { routes } from "../common/Routes";
 
 const PaymentList = () => {
   let history = useHistory();
@@ -29,6 +30,11 @@ const PaymentList = () => {
     },
   ] = usePaymentStore();
   useEffect(() => {
+    let token=localStorage.getItem("token")
+
+    if (token === null ) {
+      window.location.replace(routes.Login )
+    }
     window.scroll(0, 0);
     getPayments();
   }, []);
