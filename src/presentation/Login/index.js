@@ -5,14 +5,13 @@ import { routes } from "../common/Routes";
 
 const Login = () => {
   useEffect(() => {
-    let token;
-    getStorageItem("token").then((res) => {
-      token = res;
-      console.log("tokenfdgdg", res)
-      if (token !== null) {
-        window.location.replace(routes.DASHBOARD)
+    let token=localStorage.getItem("token")
+    let time1=localStorage.getItem("tokenTime")
+    let time2=localStorage.getItem("expireTime")
+      if (token !== null && time1<time2) {
+        window.location.replace(routes.PAYMENTLIST )
       }
-    });
+
   }, [])
   return (
     <>

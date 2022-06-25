@@ -1,16 +1,5 @@
 import Styled from "styled-components";
 
-export const AuthLetterr = Styled.div`
-width:100vw;
-#authLetter{
-  width:90%;
-  margin:0 auto;
-  padding:0 100px;
-  border:1px solid grey;
-}
-
-`;
-
 const ModalContent = Styled.div`
 .deleteIcon{
   color:red;
@@ -21,32 +10,24 @@ const ModalContent = Styled.div`
 }
 .propImage{
   display:inline-block;
-
 }
 .propContainer{
   margin-right:10px;
   position:relative;
  
   display:inlne-block;
-  width:150px;
+  width:200px;
   height:150px;
-  margin-bottom:10px
 }
 .addImage{
-  width:150px;
+  width:200px;
   height:150px;
   display:inline-block;
   display:flex;
   align-items:center;
   justify-content:center;
-  // border:1px solid grey;
+  border:1px solid grey;
   border-radius:5px;
-  
-}
-.ant-upload.ant-upload-select-picture-card{
-  margin-bottom:0;
-  height:150px;
-  width:150px;
 }
 .display {
   .rowContainer{
@@ -2330,7 +2311,6 @@ const SupportContentWrap = Styled.div`
 `;
 
 export {
-  
   ModalContent,
   TestimonialWrapper,
   PricingCard,
@@ -2356,5 +2336,4 @@ export {
   UserCarrdTop,
   SupportTopWrap,
   SupportContentWrap,
- 
 };

@@ -64,7 +64,8 @@ const EditCategory = () => {
               editDetails?.type === 3
                 ? onPropertyEdit(
                     values,
-                    singleRow?.properties[editDetails?.index].id
+                    singleRow?.properties[editDetails?.index].id,
+                    singleRow?.id
                   )
                 : onEdit(values, singleRow?.id);
             }}

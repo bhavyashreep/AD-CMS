@@ -29,16 +29,19 @@ const actions = {
       delete values["remeber"];
       const loginRes = await onLogin(values);
       console.log("response login", loginRes);
+      if (loginRes?.StatusCode === 6000) {
+        const d = new Date();
+        let time = d.getDate();
+        let time2 = time + 5;
 
-      if(loginRes?.StatusCode === 6000){
-      history.push("/dashboard");
-      localStorage.setItem("token",loginRes?.data?.access_token);
-      console.log("response login", loginRes?.data?.access_token);
+        localStorage.setItem("tokenTime", time);
+        localStorage.setItem("expireTime", time2);
 
+        history.push("/dashboard");
 
+        localStorage.setItem("token", loginRes?.data?.access_token);
+        console.log("response login", loginRes?.data?.access_token);
       }
-
-    
     },
 };
 

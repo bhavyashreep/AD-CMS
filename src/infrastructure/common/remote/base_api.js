@@ -20,6 +20,7 @@ const base = (options, headerOptions) => {
     console.log(er.response.status,"error")
     if(er.response.status!== 200){
       message.warning(er?.response?.data?.message)
+      console.log("errorrrrr",er.response)
     }
   })
 };

@@ -111,7 +111,7 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
           </NavLink>
         }
       >
-        <Link to={routes.EXPERTS}>Profile</Link>
+        <Link to={routes.PROFILE}>Profile</Link>
       </Menu.Item>
       
     </Menu>

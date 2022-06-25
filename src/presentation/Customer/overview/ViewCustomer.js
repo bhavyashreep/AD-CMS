@@ -57,8 +57,9 @@ const printDocument = () => {
 const ViewCustomer = (props) => {
   const [
     { viewVisible, singleRow },
-    { addImage, setVisibleEdit, customerDetails, onImgDelete, setVisible },
+    { addImages, setVisibleEdit, customerDetails, onImgDelete, onPropertyEdit },
   ] = useUserStore();
+
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
   const [isvis, setvis] = useState(false);
@@ -86,20 +87,18 @@ const ViewCustomer = (props) => {
   );
 
   const handleChange = (info, id) => {
-    // if (info.file.status === 'uploading') {
-    //   setLoading(true);
-    //   return;
-    // }
+    if (info.file.status !== 'uploading') {
+            addImages({ images: info.file.originFileObj }, id, props.match.params.id);
 
-    // if (info.file.status === 'done') {
-    //   // Get this url from response in real world.
-    //   getBase64(info.file.originFileObj, (url) => {
-    //     setLoading(false);
-    //     setImageUrl(url);
-    //   });
-    // }
+    }
+
+    if (info.file.status === "done") {
+      // Get this url from response in real world.
+      // addImages({ images: info.file.originFileObj }, id, props.match.params.id);
+    }
     // info.file.status='done';
-    addImage(info.file.originFileObj, id);
+    // addImage({ images: info.file.originFileObj }, id,props.match.params.id);
+    // setVisibleEdit()
   };
   console.log(singleRow, "single course");
   return (
@@ -116,10 +115,11 @@ const ViewCustomer = (props) => {
             }
           />
         )}
-        <div id="content">
+        <h1 style={{fontSize:"28px",marginBottom:"24px"}}>View Details</h1>
+        {/* <div id="content">
           <h1>The title goes here</h1>
           <p>The pararaph goes here</p>
-        </div>
+        </div> */}
 
         <ViewCards
           label="First Name"
@@ -289,30 +289,32 @@ const ViewCustomer = (props) => {
                     </span>
                   }
                 />
-                <ViewCards
-                  label="Property Type"
-                  value={
-                    <span>
-                      {item?.property_type}
-                      <a
-                        onClick={() =>
-                          setVisibleEdit({
-                            value: true,
-                            data: {
-                              label: "property_type",
-                              index: index,
-                              type: 3,
-                            },
-                          })
-                        }
-                        style={{ marginLeft: "10px" }}
-                      >
-                        Edit
-                      </a>
-                    </span>
-                  }
-                />
-                {/* <button
+
+                <div>
+                  <ViewCards
+                    label="Property Type"
+                    value={
+                      <span>
+                        {item?.property_type}
+                        <a
+                          onClick={() =>
+                            setVisibleEdit({
+                              value: true,
+                              data: {
+                                label: "property_type",
+                                index: index,
+                                type: 3,
+                              },
+                            })
+                          }
+                          style={{ marginLeft: "10px" }}
+                        >
+                          Edit
+                        </a>
+                      </span>
+                    }
+                  />
+                  {/* <button
                   onClick={() => {
                     printDocument();
                   }}
@@ -320,68 +322,74 @@ const ViewCustomer = (props) => {
                 >
                   Export to PDF
                 </button> */}
-                <ViewCards
-                  label="Authorization Letter"
-                  value={
-                    <Link
-                      to={{
-                        pathname: `/authLetter/${props.match.params.id}/${index}`,
-                      }}
-                      target="_blank"
-                    >
-                      hcgh
-                    </Link>
-                    // <Button  type="primary" icon={<DownloadOutlined />}>
-                    //   Download
-                    // </Button>
-                  }
-                />
-                <ViewCards label="Images" value="" />
-                {item?.images?.map((img) => (
-                  <span
-                    className="propContainer"
-                    style={{ display: "inline-block" }}
-                  >
-                    <Popconfirm
-                      title="Are you sure to delete this user?"
-                      onConfirm={() =>
-                        onImgDelete(item?.id, img?.id, singleRow?.id)
-                      }
-                      okText="Yes"
-                      cancelText="No"
-                    >
-                      <DeleteFilled className="deleteIcon" size={16} />
-                    </Popconfirm>
+                  <ViewCards
+                    label="Authorization Letter"
+                    value={
+                      <Link
+                        to={{
+                          pathname: `/authLetter/${props.match.params.id}/${index}`,
+                        }}
+                        target="_blank"
+                      >
+                        <Button>View Pdf</Button>
+                      </Link>
+                      // <Button  type="primary" icon={<DownloadOutlined />}>
+                      //   Download
+                      // </Button>
+                    }
+                  />
+                  <ViewCards label="Images" value="" />
+                  <div style={{ display: "flex", flexWrap: "wrap" }}>
+                    {item?.images?.map((img) => (
+                      <span
+                        className="propContainer"
+                        style={{ display: "inline-block" }}
+                      >
+                        <Popconfirm
+                          title="Are you sure to delete this user?"
+                          onConfirm={() =>
+                            onImgDelete(item?.id, img?.id, singleRow?.id)
+                          }
+                          okText="Yes"
+                          cancelText="No"
+                        >
+                          <DeleteFilled className="deleteIcon" size={16} />
+                        </Popconfirm>
 
-                    <Image
-                      className="propImage"
-                      style={{ borderRadius: 0, width: "200px" }}
-                      src={img?.image}
-                    />
-                  </span>
-                ))}
-
-                <span className="addImage">
-                  <Upload
-                    name="avatar"
-                    listType="picture-card"
-                    className="avatar-uploader"
-                    showUploadList={false}
-                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                    beforeUpload={beforeUpload}
-                    onChange={(info) => handleChange(info, item?.id)}
-                  >
-                    {imageUrl ? (
-                      <img
-                        src={imageUrl}
-                        alt="avatar"
-                        style={{ width: "100%" }}
-                      />
-                    ) : (
-                      uploadButton
-                    )}
-                  </Upload>
-                </span>
+                        <Image
+                          className="propImage"
+                          style={{
+                            borderRadius: 0,
+                            width: "150px",
+                            height: "150px",
+                          }}
+                          src={img?.image}
+                        />
+                      </span>
+                    ))}
+                    <span className="addImage">
+                      <Upload
+                        name="avatar"
+                        listType="picture-card"
+                        className="avatar-uploader"
+                        showUploadList={false}
+                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                        beforeUpload={beforeUpload}
+                        onChange={(info) => handleChange(info, item?.id)}
+                      >
+                        {imageUrl ? (
+                          <img
+                            src={imageUrl}
+                            alt="avatar"
+                            style={{ width: "100%" }}
+                          />
+                        ) : (
+                          uploadButton
+                        )}
+                      </Upload>
+                    </span>
+                  </div>
+                </div>
               </div>
             </Panel>
           ))}

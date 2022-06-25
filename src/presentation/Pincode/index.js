@@ -104,7 +104,7 @@ const PincodeList = (props) => {
             <Popconfirm
               title="Are you sure to delete this user?"
               onConfirm={() => {
-                onDelete({ id: customer?._id });
+                onDelete({ id: customer?.id,region:props.match.params.id });
               }}
               okText="Yes"
               cancelText="No"

@@ -13,6 +13,7 @@ import LayoutProvider from "./presentation/Layout";
 import ViewCustomer from "./presentation/Customer/overview/ViewCustomer";
 import PaymentList from "./presentation/PaymentManage";
 import AuthLetter from "./presentation/Customer/overview/AuthLetter";
+import Profile from "./presentation/Profile";
 
 //component imports
 const Login = React.lazy(() => import("./presentation/Login"));
@@ -21,6 +22,8 @@ const CustomerList = React.lazy(() => import("./presentation/Customer"));
 const RegionList = React.lazy(() => import("./presentation/Region"));
 const PincodeList = React.lazy(() => import("./presentation/Pincode"));
 
+const token = localStorage.getItem("token");
+console.log("token in app js", token);
 function App() {
   return (
     <Provider store={store}>
@@ -37,15 +40,23 @@ function App() {
             }
           >
             <Switch>
-              {/* {token===null? */}
+              {/* {token === null ? ( */}
+                <Route exact path={routes.LOGIN} component={Login} />
+              {/* ) : (
+                <LayoutProvider>
+                  {" "}
+                  <Route
+                    exact
+                    path={routes.PAYMENTLIST}
+                    component={PaymentList}
+                  />
+                </LayoutProvider>
+              )} */}
+              {/* <Route exact path={routes.DASHBOARD} component={Dashboard} /> } */}
 
-              <Route exact path={routes.LOGIN} component={Login} />
               <Route exact path={routes.AUTHLETTER} component={AuthLetter} />
 
-              {/* : */}
-
               <LayoutProvider>
-                {/* <Route exact path={routes.DASHBOARD} component={Dashboard} /> */}
                 <Route
                   exact
                   path={routes.CUSTOMERLIST}
@@ -67,6 +78,12 @@ function App() {
                   path={routes.PAYMENTLIST}
                   component={PaymentList}
                 />
+                  <Route
+                  exact
+                  path={routes.PROFILE}
+                  component={Profile}
+                />
+
               </LayoutProvider>
             </Switch>
           </Suspense>

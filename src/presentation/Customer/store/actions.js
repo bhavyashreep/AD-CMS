@@ -93,7 +93,7 @@ const actions = {
   onEdit:
     (params, id) =>
     ({ dispatch }) => {
-      logError(params, "Edit value");
+      logError(params, "Edit value in customer edit");
 
       const editRes = onEdit(params, id);
       dispatch(actions.getCustomer());
@@ -101,38 +101,55 @@ const actions = {
       dispatch(actions.setVisibleEdit(false));
     },
   onPropertyEdit:
-    (params, id) =>
-    ({ dispatch }) => {
-      logError(params, "Edit value");
+    (params, id,cusId) =>
+    async({ dispatch,setState }) => {
+      logError(params,id, "Edit value",);
       var form_data = new FormData();
       for (var key in params) {
         form_data.append(key, params[key]);
       }
-      const editRes = onPropEdit(form_data, id);
+      const editRes =await  onPropEdit(form_data, id);
+      console.log("response",editRes?.data)
+      // setState({ singleRow: editRes?.data });
+      if(editRes?.StatusCode===6000){
+        message.success("Property updated successfully");
+      }
 
       dispatch(actions.getCustomer());
-      dispatch(actions.customerDetails(id));
+      dispatch(actions.customerDetails(cusId));
       dispatch(actions.setVisibleEdit(false));
     },
   onImgDelete:
     (prop_id, image_id,cus_id) =>
-    ({ dispatch }) => {
+    async({ dispatch }) => {
       logError(prop_id, "Edit value");
+      const editRes = await onImageDelete({prop_id,image_id});
+      console.log("delete res",editRes);
+      if(editRes?.StatusCode===6000){
+        message.success("Property deleted successfully");
+      }
 
-      const editRes = onImageDelete({prop_id,image_id});
-      console.log("delete res",editRes)
       dispatch(actions.customerDetails(cus_id));
       dispatch(actions.setVisibleEdit(false));
     },
-    addImage:
-    (file,prop_id) =>
-    ({ dispatch }) => {
-      logError(file, "add value");
+    addImages:
+    (params, id,cusId) =>
+    async({ dispatch,setState }) => {
+      logError(params,id,cusId, "Edit value add image",);
+      var form_data = new FormData();
+      // for (var key in params) {
+        form_data.append("images", params.images);
+      // }
+      const editRes =await  onPropEdit(form_data, id);
+      if(editRes?.StatusCode===6000){
+        message.success("Property updated successfully");
+      }
+      console.log("responseeeee",editRes?.data)
+      // setState({ singleRow: editRes?.data });
 
-      // const editRes = onImageDelete({prop_id,image_id});
-      // console.log("delete res",editRes)
-      // dispatch(actions.customerDetails(cus_id));
-      // dispatch(actions.setVisibleEdit(false));
+      dispatch(actions.getCustomer());
+      dispatch(actions.customerDetails(cusId));
+      dispatch(actions.setVisibleEdit(false));
     },
 
     

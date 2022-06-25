@@ -88,8 +88,9 @@ const actions = {
     (params) =>
     async ({ dispatch }) => {
       try {
+        
         await onDelete(params);
-        message.success("Succesfully Deleted");
+        // message.success("Succesfully Deleted");
         dispatch(actions.getRegionData());
       } catch (error) {
         logError(error);

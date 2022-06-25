@@ -1,6 +1,6 @@
 import {
   getPincodeList,
-
+  deletePincode,
   // onSubmit,
   // onDelete,
   onEdit,
@@ -80,17 +80,18 @@ const actions = {
       logError(params, "Edit value");
       dispatch(actions.getData());
     },
-  // onDelete:
-  //   (params) =>
-  //   async ({ dispatch }) => {
-  //     try {
-  //       await onDelete(params);
-  //       message.success("Succesfully Deleted");
-  //       dispatch(actions.getCustomer());
-  //     } catch (error) {
-  //       logError(error);
-  //     }
-  //   },
+  onDelete:
+    (params) =>
+    async ({ dispatch }) => {
+      try {
+        logError("pincode",params)
+        await deletePincode(params.id);
+        message.success("Succesfully Deleted");
+        dispatch(actions.getPincodeData(params?.region));
+      } catch (error) {
+        logError(error);
+      }
+    },
   switchChange:
     (status, id) =>
     async ({ setState }) => {

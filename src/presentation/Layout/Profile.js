@@ -26,6 +26,9 @@ const Profile = () => {
         const signOutData = auth.signOut();
         console.log("signout", signOutData)
         console.log("signout", auth.currentUser)
+       
+      localStorage.removeItem("tokenTime")
+       localStorage.removeItem("expireTime")
         localStorage.removeItem("token");
         removeStorageItem("email");
         window.location.replace(routes.LOGIN);

@@ -7,3 +7,6 @@ export const getPincodeList = (params) => {
 export const addPincode = (params) => {
   return post(`home247/pincode-create/`,params);
 };
+export const deletePincode = (params) => {
+  return del(`home247/pincode-delete/${params}`,params);
+};

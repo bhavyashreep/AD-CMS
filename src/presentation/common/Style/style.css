@@ -2459,6 +2459,7 @@ html[dir="rtl"]
   }
   .ant-layout-header {
     height: auto;
+    height: 72px !important;
   }
   .ant-card-head {
     line-height: 1;

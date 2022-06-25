@@ -9,7 +9,8 @@ const routes = {
   EXPERTS:`/experts`,
   VIEWCUSTOMER:"/viewCustomer/:id",
   PAYMENTLIST:"/paymentList",
-  AUTHLETTER:"/authLetter/:id/:index"
+  AUTHLETTER:"/authLetter/:id/:index",
+  PROFILE:"/profile"
 };
 
 // Change initial route if required

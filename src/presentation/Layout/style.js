@@ -276,7 +276,7 @@ const Div = Styled.div`
     .navbar-brand{
         display:flex;
         .logo_main{
-            width:126px;
+            width:91px;
             max-width:unset;
             object-fit:cover;
             height:24.13px
