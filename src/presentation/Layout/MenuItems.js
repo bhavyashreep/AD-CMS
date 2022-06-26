@@ -80,7 +80,7 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
             </NavLink>
           }
         >
-          <Link to={routes.PAYMENTLIST}>Payment Manage</Link>
+          <Link style={{paddingLeft:""}} to={routes.PAYMENTLIST}>Payment Manage</Link>
         </Menu.Item>
         <Menu.Item
           key="Manage"

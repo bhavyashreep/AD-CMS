@@ -87,9 +87,8 @@ const ViewCustomer = (props) => {
   );
 
   const handleChange = (info, id) => {
-    if (info.file.status !== 'uploading') {
-            addImages({ images: info.file.originFileObj }, id, props.match.params.id);
-
+    if (info.file.status !== "uploading") {
+      addImages({ images: info.file.originFileObj }, id, props.match.params.id);
     }
 
     if (info.file.status === "done") {
@@ -115,7 +114,7 @@ const ViewCustomer = (props) => {
             }
           />
         )}
-        <h1 style={{fontSize:"28px",marginBottom:"24px"}}>View Details</h1>
+        <h1 style={{ fontSize: "28px", marginBottom: "24px" }}>View Details</h1>
         {/* <div id="content">
           <h1>The title goes here</h1>
           <p>The pararaph goes here</p>
@@ -247,13 +246,13 @@ const ViewCustomer = (props) => {
                   label="Address : "
                   value={
                     <span>
-                      {item?.address_line1}
+                      {item?.house_name}
                       <a
                         onClick={() =>
                           setVisibleEdit({
                             value: true,
                             data: {
-                              label: "address_line1",
+                              label: "house_name",
                               index: index,
                               type: 3,
                             },
@@ -266,17 +265,17 @@ const ViewCustomer = (props) => {
                     </span>
                   }
                 />
-                <ViewCards
+               { item?.street&&<ViewCards
                   label=" "
                   value={
                     <span>
-                      {item?.address_line2}
+                      {item?.street}
                       <a
                         onClick={() =>
                           setVisibleEdit({
                             value: true,
                             data: {
-                              label: "address_line2",
+                              label: "street",
                               index: index,
                               type: 3,
                             },
@@ -288,8 +287,76 @@ const ViewCustomer = (props) => {
                       </a>
                     </span>
                   }
-                />
-
+                />}
+                {item?.post_office&&<ViewCards
+                  label=" "
+                  value={
+                    <span>
+                      {item?.post_office}
+                      <a
+                        onClick={() =>
+                          setVisibleEdit({
+                            value: true,
+                            data: {
+                              label: "post_office",
+                              index: index,
+                              type: 3,
+                            },
+                          })
+                        }
+                        style={{ marginLeft: "10px" }}
+                      >
+                        Edit
+                      </a>
+                    </span>
+                  }
+                />}
+              {item?.district&&  <ViewCards
+                  label=" "
+                  value={
+                    <span>
+                      {item?.district}
+                      <a
+                        onClick={() =>
+                          setVisibleEdit({
+                            value: true,
+                            data: {
+                              label: "district",
+                              index: index,
+                              type: 3,
+                            },
+                          })
+                        }
+                        style={{ marginLeft: "10px" }}
+                      >
+                        Edit
+                      </a>
+                    </span>
+                  }
+                />}
+               {item?.state&& <ViewCards
+                label=" "
+                value={
+                  <span>
+                    {item?.state}
+                    <a
+                      onClick={() =>
+                        setVisibleEdit({
+                          value: true,
+                          data: {
+                            label: "state",
+                            index: index,
+                            type: 3,
+                          },
+                        })
+                      }
+                      style={{ marginLeft: "10px" }}
+                    >
+                      Edit
+                    </a>
+                  </span>
+                }
+              />}
                 <div>
                   <ViewCards
                     label="Property Type"
@@ -331,13 +398,38 @@ const ViewCustomer = (props) => {
                         }}
                         target="_blank"
                       >
-                        <Button>View Pdf</Button>
+                        <Button style={{
+                        background:"#4148FF",
+                        color:"white"
+
+                      }} >View Pdf</Button>
                       </Link>
                       // <Button  type="primary" icon={<DownloadOutlined />}>
                       //   Download
                       // </Button>
                     }
                   />
+                {item?.property_rented &&   <ViewCards
+                    label="Consent Letter"
+                    value={
+                      <Link
+                      
+                        to={{
+                          pathname: `/consentLetter/${props.match.params.id}/${index}`,
+                        }}
+                        target="_blank"
+                      >
+                        <Button style={{
+                        background:"#4148FF",
+                        color:"white"
+
+                      }}>View Pdf</Button>
+                      </Link>
+                      // <Button  type="primary" icon={<DownloadOutlined />}>
+                      //   Download
+                      // </Button>
+                    }
+                  />}
                   <ViewCards label="Images" value="" />
                   <div style={{ display: "flex", flexWrap: "wrap" }}>
                     {item?.images?.map((img) => (

@@ -10,6 +10,7 @@ const routes = {
   VIEWCUSTOMER:"/viewCustomer/:id",
   PAYMENTLIST:"/paymentList",
   AUTHLETTER:"/authLetter/:id/:index",
+  CONSENTLETTER:"/consentLetter/:id/:index",
   PROFILE:"/profile"
 };
 

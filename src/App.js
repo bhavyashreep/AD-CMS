@@ -14,6 +14,7 @@ import ViewCustomer from "./presentation/Customer/overview/ViewCustomer";
 import PaymentList from "./presentation/PaymentManage";
 import AuthLetter from "./presentation/Customer/overview/AuthLetter";
 import Profile from "./presentation/Profile";
+import ConsentLetter from "./presentation/Customer/overview/ConsentLetter";
 
 //component imports
 const Login = React.lazy(() => import("./presentation/Login"));
@@ -55,6 +56,8 @@ function App() {
               {/* <Route exact path={routes.DASHBOARD} component={Dashboard} /> } */}
 
               <Route exact path={routes.AUTHLETTER} component={AuthLetter} />
+              <Route exact path={routes.CONSENTLETTER} component={ConsentLetter} />
+
 
               <LayoutProvider>
                 <Route
@@ -83,7 +86,6 @@ function App() {
                   path={routes.PROFILE}
                   component={Profile}
                 />
-
               </LayoutProvider>
             </Switch>
           </Suspense>

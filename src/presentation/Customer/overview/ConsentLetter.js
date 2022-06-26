@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Logo from "../../common/Assets/Images/Logo.svg";
+// import Done from "../../common/Assets/Images/tick.svg";
 import Image from "../../common/Assets/Images/tick.png";
+
 
 import ReactToPrint from "react-to-print";
 import { AuthLetterr } from "../style";
@@ -17,6 +19,7 @@ export default function AuthLetter(props) {
   const [property, setProperty] = useState({});
 
   useEffect(() => {
+    
     customerDetails(props.match.params.id);
   }, [customerDetails]);
 
@@ -61,13 +64,21 @@ export default function AuthLetter(props) {
 export const ComponentToPrint = React.forwardRef((props, ref) => {
   const [{ singleRow }, { customerDetails }] = useUserStore();
 
+  // useEffect(() => {
+  //   console.log("calling apii");
+
+  //   customerDetails(props.id);
+  //   // setProperty(singleRow?.properties[props?.index])
+  // }, [customerDetails]);
+  // // console.log("single row", singleRow);
+  // console.log("single row prop", props?.property[0]);
 
   return (
- 
+    // <AuthLetterr>
 
     <div
       style={{
-        padding: "30px 90px 20px",
+        padding: "90px",
         fontFamily: "Poppins",
         letterSpacing: "0.7px",
       }}
@@ -79,9 +90,9 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
       <br /> <br /> <br /> <br />
       <div style={{ marginLeft: "24px" }}>
         <p>
-          Authorization Letter:
+          Consent Letter:
           <span style={{ marginLeft: "14px", fontWeight: "bold" }}>
-            {props.property?.authorization_id}
+            {props.property?.tenant_details?.consent_id}
           </span>
         </p>
         <p>
@@ -98,7 +109,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
         <p>
           Address:
           <span style={{ fontWeight: "bold", marginLeft: "14px" }}>
-            {props.property?.house_name}
+          {props.property?.house_name}
             <br />
             {props.property?.street}
             <br />
@@ -107,8 +118,6 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
             <br/>
             {props.property?.district},
             {props.property?.state}
-
-
           </span>
         </p>
         <h3
@@ -122,39 +131,16 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
         >
           TO WHOMSOEVER IT MAY CONCERN
         </h3>
+        Dear 
+        <span  style={{ fontWeight: "bold" }}> {props.property?.tenant_details?.name}</span>,
+        <br />
+        <br />
         <div className="auth-content">
-          <p style={{ marginBottom: "24px" }}>
-            I,{" "}
-            <span style={{ fontWeight: "bold", marginLeft: "14px" }}>
-              {singleRow?.user?.first_name + " " + singleRow?.user?.last_name}
-              {/* {data?.first_name + " "+data?.last_name} */}
-            </span>{" "}
-            hereby authorise representative of Home 247 to
-            <br />
-          </p>
-          <p>
-            {" "}
-            a) Access my property located at <span style={{ fontWeight: "bold"}}>{props.property?.address_line1},
-         &nbsp;{props.property?.address_line2},&nbsp;{props.property?.address_line3}</span> for
-            taking pictures/ videos of the property
-          </p>
-          <p>
-            b) Follow up with my tenant,name :
-            <span style={{ fontWeight: "bold" }}>
-              {" "}
-              {props.property?.tenant_details?.name}
-            </span>{" "}
-            on my rental dues
-          </p>
-          <p>c) Represent me in the property related meetings</p>
-          <p>d) Inspect the property for any maintenance needs</p>
-          <p>
-            e) any other services related to upkeep and maintenace of my
-            property
-          </p>
-          <p style={{ marginTop: "34px" }}>
-            This authorisation is valid for a period of one year from the date
-            mentioned on this letter.
+        <p>
+            This is to inform you that I have appointed Home 247 to manage my
+            property. The team from Home 247 may contact you for any support in
+            regards to managing the property , any maintenance needs and
+            following up on the rent. Kindly provide the necessary support.
           </p>
           <br />
           Sincerely,
@@ -169,12 +155,12 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
               backgroundRepeat:"no-repeat",
               backgroundSize:"contain",
               // opacity:"0.6"
-            }} className="signature">
+            }}  className="signature">
             <p>
               This is digitally signed document
               <br />
               <span style={{ fontWeight: "bold" }}>
-                {props.property?.authorization_id}
+                {props.property?.tenant_details?.consent_id}
               </span>
             </p>
           </div>
@@ -184,7 +170,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
         style={{
           height: "1px",
           background: "grey",
-          marginTop: "40px",
+          marginTop: "60px",
           marginBottom: "14px",
         }}
         className="divider"
