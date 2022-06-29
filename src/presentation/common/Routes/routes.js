@@ -11,7 +11,10 @@ const routes = {
   PAYMENTLIST:"/paymentList",
   AUTHLETTER:"/authLetter/:id/:index",
   CONSENTLETTER:"/consentLetter/:id/:index",
-  PROFILE:"/profile"
+  PROFILE:"/profile",
+  SERVICEREQUESTS:"/serviceRequests",
+  VIEWSERVICE:"/viewService/:id"
+
 };
 
 // Change initial route if required

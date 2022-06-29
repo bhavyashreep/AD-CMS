@@ -16,6 +16,9 @@ import AuthLetter from "./presentation/Customer/overview/AuthLetter";
 import Profile from "./presentation/Profile";
 import ConsentLetter from "./presentation/Customer/overview/ConsentLetter";
 
+import ServiceRequests from "./presentation/ServiceRequests";
+import ViewService from "./presentation/ServiceRequests/overview/ViewService";
+
 //component imports
 const Login = React.lazy(() => import("./presentation/Login"));
 // const Dashboard = React.lazy(() => import("./presentation/Dashboard"));
@@ -75,6 +78,16 @@ function App() {
                   exact
                   path={routes.VIEWCUSTOMER}
                   component={ViewCustomer}
+                />
+                 <Route
+                  exact
+                  path={routes.SERVICEREQUESTS}
+                  component={ServiceRequests}
+                />
+                  <Route
+                  exact
+                  path={routes.VIEWSERVICE}
+                  component={ViewService}
                 />
                 <Route
                   exact

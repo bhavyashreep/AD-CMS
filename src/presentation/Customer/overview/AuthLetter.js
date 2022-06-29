@@ -153,8 +153,8 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
             property
           </p>
           <p style={{ marginTop: "34px" }}>
-            This authorisation is valid for a period of one year from the date
-            mentioned on this letter.
+            {/* This authorisation is valid for a period of one year from the date
+            mentioned on this letter. */}
           </p>
           <br />
           Sincerely,

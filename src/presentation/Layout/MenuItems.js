@@ -67,6 +67,16 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
       overflowedIndicator={<FeatherIcon icon="more-vertical" />}
       openKeys={openKeys}
     >
+       <Menu.Item
+        key="serviceReq"
+        icon={
+          <NavLink className="menuItem-icon" to={routes.SERVICEREQUESTS}>
+            <img src={experts} />
+          </NavLink>
+        }
+      >
+        <Link to={routes.SERVICEREQUESTS}>Service Requests</Link>
+      </Menu.Item>
       <SubMenu
         key="sub1"
         // icon={<ContactSupportIcon style={{ marginRight: "10px" }} />}
@@ -102,7 +112,7 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
           <Link to={routes.REGIONLIST}>Pincode Manage</Link>
         </Menu.Item>
       </SubMenu>
-
+     
       <Menu.Item
         key="blog"
         icon={
