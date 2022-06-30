@@ -125,7 +125,7 @@ const ViewCustomer = (props) => {
           value={
             <span>
               {singleRow?.user?.first_name}
-              <a
+              {/* <a
                 onClick={() =>
                   setVisibleEdit({
                     value: true,
@@ -139,7 +139,7 @@ const ViewCustomer = (props) => {
                 style={{ marginLeft: "10px" }}
               >
                 Edit
-              </a>
+              </a> */}
             </span>
           }
         />
@@ -148,7 +148,7 @@ const ViewCustomer = (props) => {
           value={
             <span>
               {singleRow?.user?.last_name}
-              <a
+              {/* <a
                 onClick={() =>
                   setVisibleEdit({
                     value: true,
@@ -161,7 +161,7 @@ const ViewCustomer = (props) => {
                 style={{ marginLeft: "10px" }}
               >
                 Edit
-              </a>
+              </a> */}
             </span>
           }
         />
@@ -170,7 +170,7 @@ const ViewCustomer = (props) => {
           value={
             <span>
               {singleRow?.user?.email}
-              <a
+              {/* <a
                 onClick={() =>
                   setVisibleEdit({
                     value: true,
@@ -183,7 +183,7 @@ const ViewCustomer = (props) => {
                 style={{ marginLeft: "10px" }}
               >
                 Edit
-              </a>
+              </a> */}
             </span>
           }
         />
@@ -192,7 +192,7 @@ const ViewCustomer = (props) => {
           value={
             <span>
               {singleRow?.contact_no}
-              <a
+              {/* <a
                 onClick={() =>
                   setVisibleEdit({
                     value: true,
@@ -206,7 +206,7 @@ const ViewCustomer = (props) => {
                 style={{ marginLeft: "10px" }}
               >
                 Edit
-              </a>
+              </a> */}
             </span>
           }
         />
@@ -215,7 +215,7 @@ const ViewCustomer = (props) => {
           value={
             <span>
               {singleRow?.local_contact_no}
-              <a
+              {/* <a
                 onClick={() =>
                   setVisibleEdit({
                     value: true,
@@ -229,7 +229,7 @@ const ViewCustomer = (props) => {
                 style={{ marginLeft: "10px" }}
               >
                 Edit
-              </a>
+              </a> */}
             </span>
           }
         />
@@ -243,11 +243,11 @@ const ViewCustomer = (props) => {
                   value={"Property" + " " + parseInt(index + 1)}
                 />
                 <ViewCards
-                  label="Address : "
+                  label="House Number"
                   value={
                     <span>
                       {item?.house_name}
-                      <a
+                      {/* <a
                         onClick={() =>
                           setVisibleEdit({
                             value: true,
@@ -261,16 +261,16 @@ const ViewCustomer = (props) => {
                         style={{ marginLeft: "10px" }}
                       >
                         Edit
-                      </a>
+                      </a> */}
                     </span>
                   }
                 />
                { item?.street&&<ViewCards
-                  label=" "
+                  label="Street"
                   value={
                     <span>
                       {item?.street}
-                      <a
+                      {/* <a
                         onClick={() =>
                           setVisibleEdit({
                             value: true,
@@ -284,16 +284,16 @@ const ViewCustomer = (props) => {
                         style={{ marginLeft: "10px" }}
                       >
                         Edit
-                      </a>
+                      </a> */}
                     </span>
                   }
                 />}
                 {item?.post_office&&<ViewCards
-                  label=" "
+                  label="Post Office"
                   value={
                     <span>
                       {item?.post_office}
-                      <a
+                      {/* <a
                         onClick={() =>
                           setVisibleEdit({
                             value: true,
@@ -307,16 +307,16 @@ const ViewCustomer = (props) => {
                         style={{ marginLeft: "10px" }}
                       >
                         Edit
-                      </a>
+                      </a> */}
                     </span>
                   }
                 />}
               {item?.district&&  <ViewCards
-                  label=" "
+                  label="District"
                   value={
                     <span>
                       {item?.district}
-                      <a
+                      {/* <a
                         onClick={() =>
                           setVisibleEdit({
                             value: true,
@@ -330,16 +330,16 @@ const ViewCustomer = (props) => {
                         style={{ marginLeft: "10px" }}
                       >
                         Edit
-                      </a>
+                      </a> */}
                     </span>
                   }
                 />}
                {item?.state&& <ViewCards
-                label=" "
+                label="State"
                 value={
                   <span>
                     {item?.state}
-                    <a
+                    {/* <a
                       onClick={() =>
                         setVisibleEdit({
                           value: true,
@@ -353,7 +353,7 @@ const ViewCustomer = (props) => {
                       style={{ marginLeft: "10px" }}
                     >
                       Edit
-                    </a>
+                    </a> */}
                   </span>
                 }
               />}
@@ -363,7 +363,7 @@ const ViewCustomer = (props) => {
                     value={
                       <span>
                         {item?.property_type}
-                        <a
+                        {/* <a
                           onClick={() =>
                             setVisibleEdit({
                               value: true,
@@ -377,7 +377,7 @@ const ViewCustomer = (props) => {
                           style={{ marginLeft: "10px" }}
                         >
                           Edit
-                        </a>
+                        </a> */}
                       </span>
                     }
                   />
@@ -389,7 +389,7 @@ const ViewCustomer = (props) => {
                 >
                   Export to PDF
                 </button> */}
-                  <ViewCards
+                  {/* <ViewCards
                     label="Authorization Letter"
                     value={
                       <Link
@@ -408,8 +408,8 @@ const ViewCustomer = (props) => {
                       //   Download
                       // </Button>
                     }
-                  />
-                {item?.property_rented &&   <ViewCards
+                  /> */}
+                {/* {item?.property_rented &&   <ViewCards
                     label="Consent Letter"
                     value={
                       <Link
@@ -429,8 +429,8 @@ const ViewCustomer = (props) => {
                       //   Download
                       // </Button>
                     }
-                  />}
-                  <ViewCards label="Images" value="" />
+                  />} */}
+                 {item?.images?.length!==0&& <ViewCards label="Images" value="" />}
                   <div style={{ display: "flex", flexWrap: "wrap" }}>
                     {item?.images?.map((img) => (
                       <span
@@ -459,7 +459,7 @@ const ViewCustomer = (props) => {
                         />
                       </span>
                     ))}
-                    <span className="addImage">
+                    {/* <span className="addImage">
                       <Upload
                         name="avatar"
                         listType="picture-card"
@@ -479,7 +479,7 @@ const ViewCustomer = (props) => {
                           uploadButton
                         )}
                       </Upload>
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </div>

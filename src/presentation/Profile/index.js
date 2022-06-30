@@ -31,7 +31,7 @@ const Profile= () => {
   useEffect(() => {
     window.scroll(0, 0);
     profileDetails();
-  }, []);
+  }, [profileDetails]);
   console.log(customerList, "cusss");
   const handleSearch = (searchText) => {
     console.log("value", searchText);

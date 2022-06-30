@@ -30,8 +30,12 @@ const UserList = () => {
   ] = useUserStore();
   useEffect(() => {
     window.scroll(0, 0);
+  console.log( localStorage.getItem("token"),"token rdgrfhfc") 
     getCustomer();
-  }, []);
+  }, [getCustomer]);
+  useEffect(() => {
+
+  }, [customerList]);
   console.log(customerList,"cusss")
   const handleSearch = (searchText) => {
     console.log("value",searchText)

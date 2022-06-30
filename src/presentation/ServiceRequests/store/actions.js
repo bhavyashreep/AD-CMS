@@ -40,7 +40,6 @@ const actions = {
     (params) =>
     async ({ setState }) => {
       console.log("cussssss")
-
       const CustomerDet = await getCustomerDetails(params);
       console.log("cus det",CustomerDet)
       setState({ singleRow: CustomerDet?.data });

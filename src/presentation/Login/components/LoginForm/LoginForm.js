@@ -11,6 +11,7 @@ function LoginForm() {
   let history = useHistory();
   const [form] = Form.useForm();
   const [, { onSubmit }] = useUserStore();
+  const [{}, { getCustomer }] = useUserStore();
 
   return (
     <OverviewCard>
@@ -21,7 +22,10 @@ function LoginForm() {
             name="login"
             layout="vertical"
             form={form}
-            onFinish={(values) => onSubmit(values, history)}
+            onFinish={(values) => {
+              onSubmit(values, history);
+              getCustomer();
+            }}
           >
             <Form.Item
               name="username"
@@ -31,22 +35,31 @@ function LoginForm() {
                 },
               ]}
             >
-              <Input style={{marginBottom:"24px"}}  placeholder="Email" />
+              <Input style={{ marginBottom: "24px" }} placeholder="Email" />
             </Form.Item>
-            <Form.Item name="password" style={{marginBottom:"0"}} >
-              <Input.Password  style={{marginBottom:"24px"}} placeholder="Password" />
+            <Form.Item name="password" style={{ marginBottom: "0" }}>
+              <Input.Password
+                style={{ marginBottom: "24px" }}
+                placeholder="Password"
+              />
             </Form.Item>
             <div className="auth-form-action">
               {/* <Checkbox>Keep me logged in</Checkbox> */}
             </div>
             <Form.Item>
-            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
                 <Form.Item
                   name="remember"
                   valuePropName="checked"
                   wrapperCol={{ offset: 8, span: 16 }}
                 >
-                  <Checkbox >Remember me</Checkbox>
+                  <Checkbox>Remember me</Checkbox>
                 </Form.Item>
                 <a>Forgot your password?</a>
               </div>
@@ -59,7 +72,6 @@ function LoginForm() {
               >
                 Sign In
               </Button>
-              
             </Form.Item>
           </Form>
         </div>

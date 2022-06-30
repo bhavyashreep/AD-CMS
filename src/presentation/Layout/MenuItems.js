@@ -67,7 +67,7 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
       overflowedIndicator={<FeatherIcon icon="more-vertical" />}
       openKeys={openKeys}
     >
-       <Menu.Item
+       {/* <Menu.Item
         key="serviceReq"
         icon={
           <NavLink className="menuItem-icon" to={routes.SERVICEREQUESTS}>
@@ -76,14 +76,14 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
         }
       >
         <Link to={routes.SERVICEREQUESTS}>Service Requests</Link>
-      </Menu.Item>
-      <SubMenu
+      </Menu.Item> */}
+      {/* <SubMenu
         key="sub1"
         // icon={<ContactSupportIcon style={{ marginRight: "10px" }} />}
         title="Manage "
-      >
-        <Menu.Item
-          key="Manage"
+      > */}
+        {/* <Menu.Item
+          key="customer"
           icon={
             <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
               <img src={users} />
@@ -91,33 +91,33 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
           }
         >
           <Link style={{paddingLeft:""}} to={routes.PAYMENTLIST}>Payment Manage</Link>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item
-          key="Manage"
+          key="payment"
           icon={
             <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
-              <img src={users} />
+              <img src={experts} />
             </NavLink>
           }
         >
           <Link to={routes.CUSTOMERLIST}>Customer Manage</Link>
         </Menu.Item> <Menu.Item
-          key="Manage"
+          key="pincode"
           icon={
-            <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
-              <img src={users} />
+            <NavLink className="menuItem-icon" to={routes.REGIONLIST}>
+              <FeatherIcon icon="map-pin" size={16} />
             </NavLink>
           }
         >
           <Link to={routes.REGIONLIST}>Pincode Manage</Link>
         </Menu.Item>
-      </SubMenu>
+      {/* </SubMenu> */}
      
       <Menu.Item
         key="blog"
         icon={
-          <NavLink className="menuItem-icon" to={routes.EXPERTS}>
-            <img src={experts} />
+          <NavLink className="menuItem-icon" to={routes.PROFILE}>
+            <img src={users} />
           </NavLink>
         }
       >
