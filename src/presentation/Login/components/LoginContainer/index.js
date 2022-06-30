@@ -7,7 +7,7 @@ function LoginContainer() {
   return (
     <>
       <Container>
-        <div className="ImageContainer">
+        <div style={{width:"55%"}} className="ImageContainer">
           {/* <h1>Admin Panel</h1>
           <div>
           </div> */}

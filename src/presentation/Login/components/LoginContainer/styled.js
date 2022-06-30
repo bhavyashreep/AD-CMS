@@ -13,7 +13,7 @@ box-sizing:border-box;
     height: 100vh;
     display: flex;
     .ImageContainer{
-        height:100%
+        height:100%;
         // background: linear-gradient(0deg, #3777BC, #3777BC), linear-gradient(45deg, #5F63F2 0%, #FF69A5 100%);
         // opacity:0.1;
         width: 55%;
