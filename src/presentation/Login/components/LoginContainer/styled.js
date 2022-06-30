@@ -10,10 +10,11 @@ const Container = Styled.div`
 box-sizing:border-box;
 
     width : 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     .ImageContainer{
-        background: linear-gradient(0deg, #3777BC, #3777BC), linear-gradient(45deg, #5F63F2 0%, #FF69A5 100%);
+        height:100%
+        // background: linear-gradient(0deg, #3777BC, #3777BC), linear-gradient(45deg, #5F63F2 0%, #FF69A5 100%);
         // opacity:0.1;
         width: 55%;
         display : flex;
@@ -32,6 +33,10 @@ box-sizing:border-box;
                 width : 100%;
                 height : 100%
             }
+        }
+        img{
+            height:100%;
+            width:100%;
         }
     }
     .FormContainer{
