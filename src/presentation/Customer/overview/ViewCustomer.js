@@ -381,6 +381,101 @@ const ViewCustomer = (props) => {
                       </span>
                     }
                   />
+                  {
+                    item?.property_rented?<>
+                    <ViewCards
+                    label="Tenant Name"
+                    value={
+                      <span>
+                        {item?.tenant_details?.name}
+                        {/* <a
+                          onClick={() =>
+                            setVisibleEdit({
+                              value: true,
+                              data: {
+                                label: "property_type",
+                                index: index,
+                                type: 3,
+                              },
+                            })
+                          }
+                          style={{ marginLeft: "10px" }}
+                        >
+                          Edit
+                        </a> */}
+                      </span>
+                    }
+                  />
+                   <ViewCards
+                    label="Tenant Phone Number"
+                    value={
+                      <span>
+                        {item?.tenant_details?.phone}
+                        {/* <a
+                          onClick={() =>
+                            setVisibleEdit({
+                              value: true,
+                              data: {
+                                label: "property_type",
+                                index: index,
+                                type: 3,
+                              },
+                            })
+                          }
+                          style={{ marginLeft: "10px" }}
+                        >
+                          Edit
+                        </a> */}
+                      </span>
+                    }
+                  /> <ViewCards
+                  label="Tenant Email"
+                  value={
+                    <span>
+                      {item?.tenant_details?.email}
+                      {/* <a
+                        onClick={() =>
+                          setVisibleEdit({
+                            value: true,
+                            data: {
+                              label: "property_type",
+                              index: index,
+                              type: 3,
+                            },
+                          })
+                        }
+                        style={{ marginLeft: "10px" }}
+                      >
+                        Edit
+                      </a> */}
+                    </span>
+                  }
+                />
+                
+                    </>:<><ViewCards
+                  label="Tenant Needed?"
+                  value={
+                    <span>
+                      {item?.tenant_needed?"Yes":"No"}
+                      {/* <a
+                        onClick={() =>
+                          setVisibleEdit({
+                            value: true,
+                            data: {
+                              label: "property_type",
+                              index: index,
+                              type: 3,
+                            },
+                          })
+                        }
+                        style={{ marginLeft: "10px" }}
+                      >
+                        Edit
+                      </a> */}
+                    </span>
+                  }
+                /></>
+                  }
                   {/* <button
                   onClick={() => {
                     printDocument();
