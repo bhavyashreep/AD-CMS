@@ -7,12 +7,14 @@ const Container = Styled.div`
 .ant-checkbox + span{
     width:110px;
 }
+box-sizing:border-box;
+
     width : 100%;
-    height: calc(100vh);
+    height: 90vh;
     display: flex;
     .ImageContainer{
         background: linear-gradient(0deg, #3777BC, #3777BC), linear-gradient(45deg, #5F63F2 0%, #FF69A5 100%);
-        opacity:0.1;
+        // opacity:0.1;
         width: 55%;
         display : flex;
         flex-direction : column;

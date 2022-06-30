@@ -34,18 +34,10 @@ const Profile = () => {
 
     console.log("email in profile", profile)
     const signOut = () => {
-        
-      
- 
-    
-       
       localStorage.removeItem("tokenTime")
        localStorage.removeItem("expireTime")
         localStorage.removeItem("token");
-       
         window.location.replace(routes.LOGIN);
-
-
     }
     const menu = (
         <div className="profileBody">
@@ -68,7 +60,7 @@ const Profile = () => {
             </div>
             <Divider />
             <div className="bottom">
-                <Button type="primary" onClick={signOut}>Sign Out</Button>
+                <Button style={{background:"#B32642",border:"none"}} type="primary" onClick={signOut}>Sign Out</Button>
             </div>
         </div>
     );

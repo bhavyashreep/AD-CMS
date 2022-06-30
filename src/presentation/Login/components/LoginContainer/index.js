@@ -1,5 +1,5 @@
 import React from "react";
-import LoginImage from "../../../common/Assets/Images/Amigoes-login-image.svg";
+import Bg from "../../../common/Assets/Images/Bg.png";
 import Container from "./styled"
 import LoginForm from "../LoginForm/LoginForm";
 
@@ -10,8 +10,9 @@ function LoginContainer() {
         <div className="ImageContainer">
           {/* <h1>Admin Panel</h1>
           <div>
-            <img src={LoginImage} alt="" />
           </div> */}
+            <img src={Bg} alt="" />
+
         </div>
         <div className="FormContainer">
             <LoginForm />

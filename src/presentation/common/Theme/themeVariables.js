@@ -1,4 +1,4 @@
-const primaryColor = "#4148FF";
+const primaryColor = "#B32642";
 const primaryHover = "#4347D9";
 const secondaryColor = "#65CF9E";
 const secondaryHover = "#E34A87";
