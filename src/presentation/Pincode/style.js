@@ -270,7 +270,7 @@ const UserTableStyleWrapper = Styled.nav`
           }
           &.ant-btn-primary{
             &:hover{
-              color: #B32642;
+              color: #C81A57;
             }
           }
         }

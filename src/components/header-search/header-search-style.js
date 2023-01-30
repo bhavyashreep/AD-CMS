@@ -1,4 +1,4 @@
-import Styled from 'styled-components';
+import Styled from "styled-components";
 
 const Div = Styled.div`
     .ant-input{
@@ -13,7 +13,8 @@ const Div = Styled.div`
         font-size: 16px;
         position: relative;
         bottom: -2px;
-        color: ${({ theme, darkMode }) => (darkMode ? `#A8AAB3;` : theme['gray-color'])};
+        color: ${({ theme, darkMode }) =>
+          darkMode ? `#A8AAB3;` : theme["gray-color"]};
         @media only screen and (max-width: 767px){
             bottom: 0;
         }

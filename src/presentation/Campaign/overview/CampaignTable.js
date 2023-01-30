@@ -5,28 +5,28 @@ import { TableWrapper } from "../../common/Style/styled";
 import { Cards } from "../../common/UI/cards/frame/cards-frame";
 import FeatherIcon from "feather-icons-react";
 
-
-const CampaignTable = ({usersTableData}) => {
-  console.log("dataaaa",usersTableData)
+const CampaignTable = ({ usersTableData }) => {
+  console.log("dataaaa", usersTableData);
   const usersTableColumns = [
     {
       title: "Campaigns",
-      dataIndex: "id",
-      key: "id",
+      dataIndex: "campaign",
+      key: "campaign",
     },
     {
       title: "Start Date",
-      dataIndex: "name",
-      key: "name",
-    },{
+      dataIndex: "startDate",
+      key: "startDate",
+    },
+    {
       title: "End Date",
-      dataIndex: "email",
-      key: "email",
+      dataIndex: "endDate",
+      key: "endDate",
     },
     {
       title: "Status",
-      dataIndex: "email",
-      key: "email",
+      dataIndex: "status",
+      key: "status",
     },
     {
       title: "Actions",
@@ -44,8 +44,7 @@ const CampaignTable = ({usersTableData}) => {
   };
 
   return (
-    <Cards  >
-     
+    <Cards headless>
       {/* <Button
         // onClick={() => setVisibleCreate({ value: true })}
         key="1"
@@ -54,7 +53,7 @@ const CampaignTable = ({usersTableData}) => {
       >
         <FeatherIcon icon="plus" size={16} />  New Campaign
       </Button>, */}
-    
+
       <UserTableStyleWrapper>
         <TableWrapper className="table-responsive">
           <Table

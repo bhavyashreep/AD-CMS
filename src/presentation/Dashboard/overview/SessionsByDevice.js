@@ -78,12 +78,11 @@ const SessionsByDevice = () => {
                 datasets={[
                   {
                     data: deviceState,
-                    backgroundColor: ["#7551E9", "#FF7A2F", ],
+                    backgroundColor: ["#7551E9", "#FF7A2F"],
                     total: "9,83",
-                  
                   },
                 ]}
-                
+                options={{ cutoutPercentage: 80 }}
               />
 
               {/* <SessionState className="session-wrap d-flex justify-content-center">

@@ -60,7 +60,7 @@ const Profile = () => {
             </div>
             <Divider />
             <div className="bottom">
-                <Button style={{background:"#B32642",border:"none"}} type="primary" onClick={signOut}>Sign Out</Button>
+                <Button style={{background:"#C81A57",border:"none"}} type="primary" onClick={signOut}>Sign Out</Button>
             </div>
         </div>
     );

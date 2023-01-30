@@ -3,7 +3,9 @@ import Styled from "styled-components";
 const Main = Styled.div`
     padding: 0px 30px 20px;
     min-height: 715px;
-    background-color: rgb(244, 245, 247);
+    background-color:white;
+    border-radius:24px;
+    margin:24px;
     &.grid-boxed{
         padding: 0px 180px 20px;
         @media only screen and (max-width: 1599px){
@@ -16,6 +18,7 @@ const Main = Styled.div`
             padding: 0px 30px 20px;
         }
     }
+    
     .project-modal{
         display:flex!important;
 
@@ -280,6 +283,7 @@ const Main = Styled.div`
             line-height: 48px;
             .ant-select-selector{
                 height: 50px !important;
+                min-width:260px;
                 line-height: 48px;
             }
             .ant-select-selection-item{
@@ -714,7 +718,6 @@ const Main = Styled.div`
     .editor-compose > div {
         position: static;
         max-width: 100%;
-        margin: 25px 0;
     }
 
     // Ant Dragger
@@ -925,6 +928,7 @@ const PageHeaderWrapper = Styled.div`
     .ant-page-header{
         border: 1px solid ${({ theme }) => theme["border-color-normal"]};
         border-radius: 5px;
+        background-color:white;
     }
     .ant-page-header .ant-page-header-heading-left{
         margin: 2px 0;
@@ -1121,7 +1125,6 @@ ul.qualifications{
             }
         }
         .ant-form-item{
-            margin-bottom: 25px !important;
         }
         .ant-btn-light{
             background-color: #F8F9FB;
@@ -1221,7 +1224,6 @@ const CardToolbox = Styled.div`
         }
         .ant-select-selector{
             height: 46px !important;
-            min-width: 350px;
             @media only screen and (max-width: 991px){
                 min-width: 100%;
             }

@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { PageHeaderStyle } from './style';
+import React from "react";
+import PropTypes from "prop-types";
+import { PageHeaderStyle } from "./style";
 
-const PageHeader = props => {
+const PageHeader = (props) => {
   const { title, subTitle, routes, buttons, ghost, bgColor, className } = props;
   return (
     <>
       <div
         style={{
-          backgroundColor: bgColor || '#F4F5F7',
+          backgroundColor: bgColor || "#F4F5F7",
         }}
       >
         <PageHeaderStyle
           style={{
-            backgroundColor: 'rgb(244, 245, 247)',
+            backgroundColor: "white",
           }}
           // onBack={() => window.history.back()}
           className={className}

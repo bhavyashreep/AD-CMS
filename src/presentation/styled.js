@@ -1,11 +1,11 @@
-import Styled from 'styled-components';
+import Styled from "styled-components";
 
 const Main = Styled.div`
 .title{
-    font-family: 'Proxima Nova';
+     ;
 font-style: normal;
 font-weight: 700;
-font-size: 20px;
+font-size: 24px;
 line-height: 24px;
 /* identical to box height, or 100% */
 
@@ -13,8 +13,13 @@ line-height: 24px;
 color: rgba(34, 29, 32, 0.85);
 margin-bottom:37px;
 }
+.sub-title{
+    font-size:14px;
+    line-height:22px;
+    margin-bottom:12px
+}
 .label{
-    font-family: 'Proxima Nova';
+     ;
 font-style: normal;
 font-weight: 800;
 font-size: 20px;
@@ -26,7 +31,7 @@ letter-spacing: 0.429903px;
 color: rgba(0, 0, 0, 0.64);
 }
 .value{
-    font-family: 'Proxima Nova';
+     ;
 font-style: normal;
 font-weight: 800;
 font-size: 40px;
@@ -60,11 +65,12 @@ color: #000000;
                 margin-right: 0 !important;
             }
     .ant-tabs-tab span svg {        
-        ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 5px;
+        ${({ theme }) => (theme.rtl ? "padding-left" : "padding-right")}: 5px;
     }
     /* Picker Under Input */
     .ant-form-item-control-input .ant-picker {
-        padding: ${({ theme }) => (theme.rtl ? '0 0 0 12px' : '0 12px 0 0')} !important;
+        padding: ${({ theme }) =>
+          theme.rtl ? "0 0 0 12px" : "0 12px 0 0"} !important;
     }
 
     /* progressbars */
@@ -80,14 +86,17 @@ color: #000000;
     }
 
     .ant-progress .ant-progress-outer {
-        ${({ theme }) => (!theme.rtl ? 'margin-right' : 'margin-left')}: 0 !important;
-        ${({ theme }) => (!theme.rtl ? 'padding-right' : 'padding-left')}: 0 !important;
+        ${({ theme }) =>
+          !theme.rtl ? "margin-right" : "margin-left"}: 0 !important;
+        ${({ theme }) =>
+          !theme.rtl ? "padding-right" : "padding-left"}: 0 !important;
     }
 
     .ant-progress .ant-progress-text {
         order: 0;
         margin-left: auto;
-        ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 10px !important;
+        ${({ theme }) =>
+          theme.rtl ? "margin-right" : "margin-left"}: 10px !important;
         align-self: flex-end;
         text-align: center;
     }
@@ -119,7 +128,7 @@ color: #000000;
     /* // ant alert */
     .ant-alert-closable{
         .ant-alert-message{
-          ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
+          ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 15px;
         }
     }
 
@@ -130,7 +139,7 @@ color: #000000;
     /* // ant Calendar Picker */
     .ant-picker-calendar{
         .ant-badge-status-text{
-            color: ${({ theme }) => theme['gray-color']};
+            color: ${({ theme }) => theme["gray-color"]};
         }
     }
     .ant-picker-calendar-header .ant-picker-calendar-year-select{
@@ -184,7 +193,7 @@ color: #000000;
             min-height: 500px;
         }
         input::placeholder{
-            color: ${({ theme }) => theme['light-color']};
+            color: ${({ theme }) => theme["light-color"]};
         }
     }
     /* // Modal Buttons */
@@ -193,9 +202,9 @@ color: #000000;
     }
     /* spinner */
     .ant-spin{
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px;
+        ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 20px;
         &:last-child{
-            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 0;
+            ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 0;
         }
     }
 
@@ -220,7 +229,7 @@ color: #000000;
     .ant-collapse.ant-collapse-icon-position-left .ant-collapse-header{
         color: #5A5F7D;
         padding: 12px 16px 10px 45px;
-        background-color: ${({ theme }) => theme['bg-color-light']};
+        background-color: ${({ theme }) => theme["bg-color-light"]};
     }
     .ant-collapse-content p{
         color: #9299B8;
@@ -299,11 +308,13 @@ color: #000000;
     .ant-select{
         &.ant-select-multiple{
             .ant-select-selection-item{
-                ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 8px;
+                ${({ theme }) =>
+                  !theme.rtl ? "padding-left" : "padding-right"}: 8px;
             }
         }
         .ant-select-selection-item{
-            ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 10px !important;
+            ${({ theme }) =>
+              !theme.rtl ? "padding-left" : "padding-right"}: 10px !important;
         }
         &.ant-select-lg{
             height: 50px;
@@ -311,10 +322,12 @@ color: #000000;
             .ant-select-selector{
                 height: 50px !important;
                 line-height: 48px;
+                min-width:260px;
             }
             .ant-select-selection-item{
                 line-height: 48px !important;
-                ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 8px;
+                ${({ theme }) =>
+                  !theme.rtl ? "padding-left" : "padding-right"}: 8px;
             }
             &.ant-select-multiple.ant-select-lg .ant-select-selection-item{
                 height: 32px;
@@ -333,7 +346,8 @@ color: #000000;
     /* // Slider */
     .slider-with-input{
         .ant-slider{
-            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
+            ${({ theme }) =>
+              theme.rtl ? "margin-left" : "margin-right"}: 15px;
         }
         .slider-with-input__single{
             margin-bottom: 15px;
@@ -348,7 +362,7 @@ color: #000000;
             padding: 0 10.2px;
             border: 0 none;
             margin: 5px;
-            color: ${({ theme }) => theme['gray-color']};
+            color: ${({ theme }) => theme["gray-color"]};
             &.ant-tag-has-color{
                 color: #fff !important;
             }
@@ -400,7 +414,7 @@ color: #000000;
     .ant-menu{
         .ant-menu-submenu-title{
             svg{
-                color: ${({ theme }) => theme['light-color']};
+                color: ${({ theme }) => theme["light-color"]};
             }
         }
     }
@@ -522,7 +536,7 @@ color: #000000;
         i,
         span.fa{
           font-size: 16px;
-          color: ${({ theme }) => theme['extra-light-color']};
+          color: ${({ theme }) => theme["extra-light-color"]};
         }
         &.starDeactivate{
           i:before{
@@ -532,11 +546,11 @@ color: #000000;
         &.starActive{
           i,
           span.fa{
-            color: ${({ theme }) => theme['warning-color']};
+            color: ${({ theme }) => theme["warning-color"]};
           }
           i:before,
           span.fa:before{
-            color: ${({ theme }) => theme['warning-color']};
+            color: ${({ theme }) => theme["warning-color"]};
             content: "\f005";
     
           }
@@ -544,7 +558,7 @@ color: #000000;
     }
 
     .ant-timeline{
-        color: ${({ theme }) => theme['gray-color']};
+        color: ${({ theme }) => theme["gray-color"]};
         .ant-timeline-item-content{
             font-size: 16px;
         }
@@ -553,7 +567,7 @@ color: #000000;
     
     .ant-rate-content{
         font-weight: 500;
-        color: ${({ theme }) => theme['gray-color']}
+        color: ${({ theme }) => theme["gray-color"]}
     }
 
     .account-card{
@@ -603,7 +617,7 @@ color: #000000;
     }
 
     .chart-label .label-dot {
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px;
+        ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 8px;
         width: 7px;
         height: 7px;
         border-radius: 50%;
@@ -626,7 +640,7 @@ color: #000000;
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
+        ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 10px;
     }
 
     // Ant comment action
@@ -681,7 +695,7 @@ color: #000000;
         .emoji-group:before{
             font-size: 12px;
             font-weight: 600;
-            color: ${({ theme }) => theme['dark-color']};
+            color: ${({ theme }) => theme["dark-color"]};
         }
         .emoji-group .emoji-img{
             margin: 5px !important;
@@ -733,8 +747,10 @@ color: #000000;
             @media only screen and (max-width: 1399px) {
                 padding: 25px;
             }
-            ${({ theme }) => (theme.rtl ? 'border-right' : 'border-left')}: 1px solid ${({ theme }) =>
-  theme['border-color-light']};
+            ${({ theme }) =>
+              theme.rtl ? "border-right" : "border-left"}: 1px solid ${({
+  theme,
+}) => theme["border-color-light"]};
         }
     }
     .editor-compose > div {
@@ -767,11 +783,11 @@ color: #000000;
     .ant-form-item{
         &.ant-form-item-has-success{
             .ant-input{
-                border-color: ${({ theme }) => theme['success-color']};
+                border-color: ${({ theme }) => theme["success-color"]};
             }
             &.ant-form-item-with-help{
                 .ant-form-item-explain{
-                    color: ${({ theme }) => theme['success-color']};
+                    color: ${({ theme }) => theme["success-color"]};
                 }
             }
         }
@@ -798,28 +814,32 @@ const ButtonsGroupWrapper = Styled.div`
     .button-group-single .ant-btn-white{
         border: 1px solid #E3E6EF;
         background: #fff !important;
-        ${({ theme }) => (theme.rtl ? 'border-left-width' : 'border-right-width')}: 0px;
+        ${({ theme }) =>
+          theme.rtl ? "border-left-width" : "border-right-width"}: 0px;
         &:last-child{
-            ${({ theme }) => (theme.rtl ? 'border-left-width' : 'border-right-width')}: 1px;
+            ${({ theme }) =>
+              theme.rtl ? "border-left-width" : "border-right-width"}: 1px;
         }
         &:hover{
-            color: ${({ theme }) => theme['gray-color']} !important;
-            background: ${({ theme }) => theme['bg-color-normal']} !important;
+            color: ${({ theme }) => theme["gray-color"]} !important;
+            background: ${({ theme }) => theme["bg-color-normal"]} !important;
         }
     }
     .button-group-single .ant-btn-light{
         border: 1px solid #E3E6EF;
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px;
-        ${({ theme }) => (theme.rtl ? 'border-left-width' : 'border-right-width')}: 0px;
+        ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 20px;
+        ${({ theme }) =>
+          theme.rtl ? "border-left-width" : "border-right-width"}: 0px;
         font-weight: 500;
-        color: ${({ theme }) => theme['extra-light-color']} !important;
-        background: ${({ theme }) => theme['bg-color-normal']} !important;
+        color: ${({ theme }) => theme["extra-light-color"]} !important;
+        background: ${({ theme }) => theme["bg-color-normal"]} !important;
         &:last-child{
-            ${({ theme }) => (theme.rtl ? 'border-left-width' : 'border-right-width')}: 1px;
+            ${({ theme }) =>
+              theme.rtl ? "border-left-width" : "border-right-width"}: 1px;
         }
     }
     .ant-btn-group:not(:last-child){
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px;
+        ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 20px;
     }
 `;
 
@@ -844,7 +864,7 @@ const BtnWithIcon = Styled.div`
         height: 10px;
     }
     .ant-btn-group button.active{
-        ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 0px;
+        ${({ theme }) => (theme.rtl ? "border-left" : "border-right")}: 0px;
     }
 `;
 
@@ -930,7 +950,7 @@ const NotificationListWrapper = Styled.div`
 const TagInput = Styled.div`
     padding: 12px;
     border-radius: 4px;
-    border: 1px solid ${({ theme }) => theme['border-color-normal']};
+    border: 1px solid ${({ theme }) => theme["border-color-normal"]};
     margin: -3px;
     .ant-tag{
         margin: 3px;
@@ -945,7 +965,7 @@ const TagInput = Styled.div`
 
 const PageHeaderWrapper = Styled.div`
     .ant-page-header{
-        border: 1px solid ${({ theme }) => theme['border-color-normal']};
+        border: 1px solid ${({ theme }) => theme["border-color-normal"]};
         border-radius: 5px;
     }
     .ant-page-header .ant-page-header-heading-left{
@@ -996,7 +1016,7 @@ const BasicFormWrapper = Styled.div`
             margin-bottom: 0;
         }
         .ant-form-item-label{
-            text-align: ${({ theme }) => (theme.rtl ? 'right' : 'left')};
+            text-align: ${({ theme }) => (theme.rtl ? "right" : "left")};
             label{
                 height: fit-content;
                 margin-bottom: 6px;
@@ -1005,9 +1025,9 @@ const BasicFormWrapper = Styled.div`
         .ant-form-item-control-input{
             input,
             textarea{
-                color: ${({ theme }) => theme['gray-color']};
+                color: ${({ theme }) => theme["gray-color"]};
                 &:placeholder{
-                    color: ${({ theme }) => theme['light-color']};
+                    color: ${({ theme }) => theme["light-color"]};
                 }
             }
             input[type="password"]{
@@ -1028,7 +1048,8 @@ const BasicFormWrapper = Styled.div`
             .ant-select-selector{
                 padding: 0 20px;
                 height: 48px !important;
-                border: 1px solid ${({ theme }) => theme['border-color-normal']};
+                border: 1px solid ${({ theme }) =>
+                  theme["border-color-normal"]};
                 .ant-select-selection-item{
                     line-height: 46px !important;
                     padding: 0 !important;
@@ -1049,39 +1070,41 @@ const BasicFormWrapper = Styled.div`
             height: 44px;
             margin-bottom: 14px;
             &.ant-btn-light{
-                border: 1px solid ${({ theme }) => theme['border-color-light']};
-                background-color: ${({ theme }) => theme['bg-color-light']};
+                border: 1px solid ${({ theme }) => theme["border-color-light"]};
+                background-color: ${({ theme }) => theme["bg-color-light"]};
             }
         }
     }
     .ant-form-item-control-input{
         .input-prepend{
             position: absolute;
-            ${({ theme }) => (theme.rtl ? 'right' : 'left')}: 0;
+            ${({ theme }) => (theme.rtl ? "right" : "left")}: 0;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 0 20px;
             height: 48px;
-            border-radius: ${({ theme }) => (theme.rtl ? '0 4px 4px 0' : '4px 0 0 4px')};
+            border-radius: ${({ theme }) =>
+              theme.rtl ? "0 4px 4px 0" : "4px 0 0 4px"};
             z-index: 10;
-            border: 1px solid ${({ theme }) => theme['border-color-normal']};
-            background-color: ${({ theme }) => theme['bg-color-light']};
+            border: 1px solid ${({ theme }) => theme["border-color-normal"]};
+            background-color: ${({ theme }) => theme["bg-color-light"]};
             svg,
             i{
-                color: ${({ theme }) => theme['gray-color']};
+                color: ${({ theme }) => theme["gray-color"]};
             }
         }
         .input-prepend-wrap{
             .ant-input-number{
                 input{
-                    ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 70px;
+                    ${({ theme }) =>
+                      !theme.rtl ? "padding-left" : "padding-right"}: 70px;
                 }
             }
         }
         .ant-input-number{
             width: 100% !important;
-            border: 1px solid ${({ theme }) => theme['border-color-normal']};
+            border: 1px solid ${({ theme }) => theme["border-color-normal"]};
         }
     }
     .add-record-form{
@@ -1193,20 +1216,22 @@ const CardToolbox = Styled.div`
 
     .ant-page-header-heading-title{
         position: relative;
-        ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 24px;
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 24px;
+        ${({ theme }) => (theme.rtl ? "padding-left" : "padding-right")}: 24px;
+        ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 24px;
         @media only screen and (max-width: 767px){
-            ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 12px;
-            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 12px !important;
+            ${({ theme }) =>
+              theme.rtl ? "padding-left" : "padding-right"}: 12px;
+            ${({ theme }) =>
+              theme.rtl ? "margin-left" : "margin-right"}: 12px !important;
         }
         &:after{
             position: absolute;
-            ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 0px;
+            ${({ theme }) => (theme.rtl ? "left" : "right")}: 0px;
             top: 0;
             height: 100%;
             width: 1px;
             content: '';
-            background: ${({ theme }) => theme['border-color-normal']};
+            background: ${({ theme }) => theme["border-color-normal"]};
         }
     }
     .ant-page-header-heading-sub-title{
@@ -1215,13 +1240,12 @@ const CardToolbox = Styled.div`
         align-items: center;
     }
     .ant-select{
-        ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 25px;
+        ${({ theme }) => (!theme.rtl ? "margin-left" : "margin-right")}: 25px;
         @media only screen and (max-width: 575px){
-            ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 0;
+            ${({ theme }) => (!theme.rtl ? "margin-left" : "margin-right")}: 0;
         }
         .ant-select-selector{
             height: 46px !important;
-            min-width: 350px;
             @media only screen and (max-width: 991px){
                 min-width: 100%;
             }
@@ -1249,7 +1273,8 @@ const CardToolbox = Styled.div`
             display: flex;
             align-items: center;
             svg{
-                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
+                ${({ theme }) =>
+                  theme.rtl ? "margin-left" : "margin-right"}: 6px;
             }
         }
     }
@@ -1284,16 +1309,16 @@ const FileCardWrapper = Styled.div`
                 &.file-name{
                     font-size: 14px;
                     font-weight: 500;
-                    color: ${({ theme }) => theme['dark-color']};
+                    color: ${({ theme }) => theme["dark-color"]};
                 }
                 &.file-size{
                     margin: 2px 0;;
-                    color: ${({ theme }) => theme['gray-solid']};
+                    color: ${({ theme }) => theme["gray-solid"]};
                 }
                 &.file-content-action{
                     a{
                         font-weight: 500;
-                        color: ${({ theme }) => theme['primary-color']};
+                        color: ${({ theme }) => theme["primary-color"]};
                     }
                     a + a{
                         margin-left: 8px;
@@ -1305,7 +1330,8 @@ const FileCardWrapper = Styled.div`
             width: 50%;
             align-items: center;
             .file-single-logo{
-                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 16px;
+                ${({ theme }) =>
+                  theme.rtl ? "margin-left" : "margin-right"}: 16px;
                 img{
                     max-width: 42px;
                 }
@@ -1313,7 +1339,7 @@ const FileCardWrapper = Styled.div`
         }
         .file-single-action{
             .ant-dropdown-trigger {
-                color: ${({ theme }) => theme['extra-light-color']};
+                color: ${({ theme }) => theme["extra-light-color"]};
             }
         }
     }
@@ -1322,19 +1348,19 @@ const FileCardWrapper = Styled.div`
 const TableWrapper = Styled.div`
     .ant-pagination-prev, .ant-pagination-next {
         line-height: 28px !important;
-        transform: rotateY(${({ theme }) => (theme.rtl ? '180deg' : '0deg')})
+        transform: rotateY(${({ theme }) => (theme.rtl ? "180deg" : "0deg")})
     }
     .ant-table table{
-        text-align: ${({ theme }) => (!theme.rtl ? 'left' : 'right')};
+        text-align: ${({ theme }) => (!theme.rtl ? "left" : "right")};
     }
     .ant-table-thead > tr > th{
-        text-align: ${({ theme }) => (!theme.rtl ? 'left' : 'right')};
+        text-align: ${({ theme }) => (!theme.rtl ? "left" : "right")};
     }
     span.anticon.anticon-right{
-        transform: rotateY(${({ theme }) => (theme.rtl ? '180deg' : '0deg')})
+        transform: rotateY(${({ theme }) => (theme.rtl ? "180deg" : "0deg")})
     }
     span.anticon.anticon-left{
-        transform: rotateY(${({ theme }) => (theme.rtl ? '180deg' : '0deg')})
+        transform: rotateY(${({ theme }) => (theme.rtl ? "180deg" : "0deg")})
     }
     &.table-order,
     &.table-seller,
@@ -1342,8 +1368,8 @@ const TableWrapper = Styled.div`
         .ant-table-selection{
             .ant-checkbox-indeterminate{
                 .ant-checkbox-inner{
-                    background: ${({ theme }) => theme['primary-color']};
-                    border-color: ${({ theme }) => theme['primary-color']};
+                    background: ${({ theme }) => theme["primary-color"]};
+                    border-color: ${({ theme }) => theme["primary-color"]};
                     &:after{
                         height: 2px;
                         background-color: #fff;
@@ -1353,19 +1379,21 @@ const TableWrapper = Styled.div`
         }
         .ant-table-container{
             padding-bottom: 25px;
-            border-bottom: 1px solid ${({ theme }) => theme['border-color-light']};
+            border-bottom: 1px solid ${({ theme }) =>
+              theme["border-color-light"]};
         }
         tbody{
             tr{
                 &:hover{
                     td{
-                        background: ${({ theme }) => theme['bg-color-light']};
+                        background: ${({ theme }) => theme["bg-color-light"]};
                     }
                 }
                 td{
                     .product-id{
                         max-width: 60px;
-                        text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
+                        text-align: ${({ theme }) =>
+                          theme.rtl ? "left" : "right"};
                     }
                 }
             }
@@ -1391,43 +1419,52 @@ const TableWrapper = Styled.div`
                         img{
                             max-width: 38px;
                             border-radius: 50%;
-                            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 12px;
+                            ${({ theme }) =>
+                              theme.rtl ? "margin-left" : "margin-right"}: 12px;
                         }
                     }
                     .record-location{
                         display: block;
                         font-size: 12px;
                         font-weight: 400;
-                        color: ${({ theme }) => theme['light-color']};
+                        color: ${({ theme }) => theme["light-color"]};
                     }
                     .status{
                         font-weight: 500;
                         text-transform: capitalize;
                         &.active{
-                            color: ${({ theme }) => theme['success-color']};
-                            background: ${({ theme }) => theme['success-color']}10;
+                            color: ${({ theme }) => theme["success-color"]};
+                            background: ${({ theme }) =>
+                              theme["success-color"]}10;
                         }
                         &.deactivated{
-                            color: ${({ theme }) => theme['warning-color']};
-                            background: ${({ theme }) => theme['warning-color']}10;
+                            color: ${({ theme }) => theme["warning-color"]};
+                            background: ${({ theme }) =>
+                              theme["warning-color"]}10;
                         }
                         &.blocked{
-                            color: ${({ theme }) => theme['danger-color']};
-                            background: ${({ theme }) => theme['danger-color']}10;
+                            color: ${({ theme }) => theme["danger-color"]};
+                            background: ${({ theme }) =>
+                              theme["danger-color"]}10;
                         }
                     }
                     .table-actions{
                         a{
                             svg, i{
                                 width: 16px;
-                                color: ${({ theme }) => theme['extra-light-color']};
+                                color: ${({ theme }) =>
+                                  theme["extra-light-color"]};
                             }
                             &.edit{
-                                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
+                                ${({ theme }) =>
+                                  theme.rtl
+                                    ? "margin-left"
+                                    : "margin-right"}: 6px;
                               &:hover{
                                 svg,
                                 i{
-                                    color: ${({ theme }) => theme['info-color']};
+                                    color: ${({ theme }) =>
+                                      theme["info-color"]};
                                 }
                               }  
                             }
@@ -1435,7 +1472,8 @@ const TableWrapper = Styled.div`
                               &:hover{
                                 svg,
                                 i{
-                                    color: ${({ theme }) => theme['danger-color']};
+                                    color: ${({ theme }) =>
+                                      theme["danger-color"]};
                                 }
                               }  
                             }
@@ -1451,21 +1489,36 @@ const TableWrapper = Styled.div`
                 border-radius: 10px;
                 th{
                     &:last-child{
-                        text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
+                        text-align: ${({ theme }) =>
+                          theme.rtl ? "left" : "right"};
                     }
-                    color: ${({ theme }) => theme['gray-color']};
-                    background: ${({ theme }) => theme['bg-color-light']};
-                    border-top: 1px solid ${({ theme }) => theme['border-color-light']};
-                    border-bottom: 1px solid ${({ theme }) => theme['border-color-light']};
+                    color: ${({ theme }) => theme["gray-color"]};
+                    background: ${({ theme }) => theme["bg-color-light"]};
+                    border-top: 1px solid ${({ theme }) =>
+                      theme["border-color-light"]};
+                    border-bottom: 1px solid ${({ theme }) =>
+                      theme["border-color-light"]};
                     &:first-child{
-                        ${({ theme }) => (!theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
-  theme['border-color-light']};
-                        border-radius: ${({ theme }) => (!theme.rtl ? '10px 0 0 10px' : '0 10px 10px 0')} !important;
+                        ${({ theme }) =>
+                          !theme.rtl
+                            ? "border-left"
+                            : "border-right"}: 1px solid ${({ theme }) =>
+  theme["border-color-light"]};
+                        border-radius: ${({ theme }) =>
+                          !theme.rtl
+                            ? "10px 0 0 10px"
+                            : "0 10px 10px 0"} !important;
                     }
                     &:last-child{
-                        ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
-  theme['border-color-light']};
-                        border-radius: ${({ theme }) => (!theme.rtl ? '0 10px 10px 0' : '10px 0 0 10px')} !important;
+                        ${({ theme }) =>
+                          theme.rtl
+                            ? "border-left"
+                            : "border-right"}: 1px solid ${({ theme }) =>
+  theme["border-color-light"]};
+                        border-radius: ${({ theme }) =>
+                          !theme.rtl
+                            ? "0 10px 10px 0"
+                            : "10px 0 0 10px"} !important;
                     }
                 }
             }
@@ -1474,28 +1527,35 @@ const TableWrapper = Styled.div`
             tr{
                 &:hover{
                     td{
-                        background: ${({ theme }) => theme['bg-color-light']};
+                        background: ${({ theme }) => theme["bg-color-light"]};
                     }
                 }
                 &.ant-table-row-selected{
                     &:hover{
                         td{
-                            background: ${({ theme }) => theme['bg-color-light']};
+                            background: ${({ theme }) =>
+                              theme["bg-color-light"]};
                         }
                     }
                     td{
-                        background: ${({ theme }) => theme['bg-color-light']};
+                        background: ${({ theme }) => theme["bg-color-light"]};
                     }
                 }
                 td{
                     border: 0 none;
                     font-weight: 500;
-                    color: ${({ theme }) => theme['dark-color']};
+                    color: ${({ theme }) => theme["dark-color"]};
                     &:first-child{
-                        border-radius: ${({ theme }) => (!theme.rtl ? '10px 0 0 10px' : '0 10px 10px 0')} !important;
+                        border-radius: ${({ theme }) =>
+                          !theme.rtl
+                            ? "10px 0 0 10px"
+                            : "0 10px 10px 0"} !important;
                     }
                     &:last-child{
-                        border-radius: ${({ theme }) => (!theme.rtl ? '0 10px 10px 0' : '10px 0 0 10px')} !important;
+                        border-radius: ${({ theme }) =>
+                          !theme.rtl
+                            ? "0 10px 10px 0"
+                            : "10px 0 0 10px"} !important;
                     }
                     span{
                         display: block;
@@ -1523,33 +1583,34 @@ const TableWrapper = Styled.div`
         }
         .table-actions{
            
-            text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
+            text-align: ${({ theme }) => (theme.rtl ? "left" : "right")};
             min-width: 60px !important;
             button{
                 height: 40px;
                 padding: 0 11px;
                 background: transparent;
                 border: 0 none;
-                color: ${({ theme }) => theme['extra-light-color']};
+                color: ${({ theme }) => theme["extra-light-color"]};
                 &:hover{
                     &.ant-btn-primary{
-                        color: ${({ theme }) => theme['primary-color']};
-                        background: ${({ theme }) => theme['primary-color']}10;
+                        color: ${({ theme }) => theme["primary-color"]};
+                        background: ${({ theme }) => theme["primary-color"]}10;
                     }
                     &.ant-btn-info{
-                        color: ${({ theme }) => theme['info-color']};
-                        background: ${({ theme }) => theme['info-color']}10;
+                        color: ${({ theme }) => theme["info-color"]};
+                        background: ${({ theme }) => theme["info-color"]}10;
                     }
                     &.ant-btn-danger{
-                        color: ${({ theme }) => theme['danger-color']};
-                        background: ${({ theme }) => theme['danger-color']}10;
+                        color: ${({ theme }) => theme["danger-color"]};
+                        background: ${({ theme }) => theme["danger-color"]}10;
                     }
                 }
             }
         }
         .seller-info{
             img{
-                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 12px;
+                ${({ theme }) =>
+                  theme.rtl ? "margin-left" : "margin-right"}: 12px;
             }
         }
         .user-info{
@@ -1565,7 +1626,7 @@ const TableWrapper = Styled.div`
             .user-designation{
                 font-size: 12px;
                 font-weight: 400;
-                color: ${({ theme }) => theme['light-color']};
+                color: ${({ theme }) => theme["light-color"]};
             }
         }
     }    
@@ -1583,7 +1644,8 @@ const DragDropStyle = Styled.div`
             >tr{
                 &:not(:last-child){
                     td{
-                         border-bottom: 1px solid ${({ theme }) => theme['border-color-normal']} !important;
+                         border-bottom: 1px solid ${({ theme }) =>
+                           theme["border-color-normal"]} !important;
                     }
                  }
                  &:hover{
@@ -1609,7 +1671,8 @@ const DragDropStyle = Styled.div`
                     }
                     svg,
                     i{
-                        color: ${({ theme }) => theme['extra-light-color']} !important;
+                        color: ${({ theme }) =>
+                          theme["extra-light-color"]} !important;
                     }
                 }
             }
@@ -1646,17 +1709,17 @@ const ImportStyleWrap = Styled.div`
         .ant-upload-hint{
             margin-left: 4px;
             span{
-                color: ${({ theme }) => theme['primary-color']};
+                color: ${({ theme }) => theme["primary-color"]};
             }
         }
         .ant-upload-list{
             .ant-upload-list-item{
                 background-color: #fff;
-                border-color: ${({ theme }) => theme['border-color-normal']};
+                border-color: ${({ theme }) => theme["border-color-normal"]};
             }
             .ant-upload-list-item-card-actions.picture{
                 top: 18px;
-                ${({ theme }) => (!theme.rtl ? 'right' : 'left')}: 15px;
+                ${({ theme }) => (!theme.rtl ? "right" : "left")}: 15px;
             }
         }
     }
@@ -1689,13 +1752,14 @@ const ExportStyleWrap = Styled.div`
     .sDash_export-file-table{
         .ant-table-content{
             .ant-table-thead{
-                border: 1px solid ${({ theme }) => theme['border-color-light']};
+                border: 1px solid ${({ theme }) => theme["border-color-light"]};
                 border-radius: 10px;
                 tr{
                     th{
-                        background-color: ${({ theme }) => theme['bg-color-light']};
+                        background-color: ${({ theme }) =>
+                          theme["bg-color-light"]};
                         border: 0 none;
-                        color: ${({ theme }) => theme['gray-color']};
+                        color: ${({ theme }) => theme["gray-color"]};
                         &:first-child{
                             border-radius: 10px 0 0 10px;
                         }

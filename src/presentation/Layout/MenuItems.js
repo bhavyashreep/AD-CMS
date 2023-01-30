@@ -67,28 +67,30 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
       overflowedIndicator={<FeatherIcon icon="more-vertical" />}
       openKeys={openKeys}
     >
-        <Menu.Item
-          key="dashboard"
-          icon={
-            <NavLink className="menuItem-icon" to={routes.DASHBOARD}>
-              <img src={dashboard} />
-            </NavLink>
-          }
-        >
-          <Link className="menu-title" to={routes.CUSTOMERLIST}>Dashboard</Link>
-        </Menu.Item> 
-    
-        <Menu.Item
-          key="campaign"
-          icon={
-            <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
-              <img src={experts} />
-            </NavLink>
-          }
-        >
-          <Link to={routes.CUSTOMERLIST}>Campaign</Link>
-        </Menu.Item> 
-        {/* <Menu.Item
+      <Menu.Item
+        key="dashboard"
+        icon={
+          <NavLink className="menuItem-icon" to={routes.DASHBOARD}>
+            <img src={dashboard} />
+          </NavLink>
+        }
+      >
+        <NavLink className="menu-title" to={routes.DASHBOARD}>
+          Dashboard
+        </NavLink>
+      </Menu.Item>
+
+      <Menu.Item
+        key="campaign"
+        icon={
+          <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
+            <img src={experts} />
+          </NavLink>
+        }
+      >
+        <Link to={routes.CUSTOMERLIST}>Campaign</Link>
+      </Menu.Item>
+      {/* <Menu.Item
           key="pincode"
           icon={
             <NavLink className="menuItem-icon" to={routes.REGIONLIST}>
@@ -99,7 +101,7 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
           <Link to={routes.REGIONLIST}>Pincode Manage</Link>
         </Menu.Item> */}
       {/* </SubMenu> */}
-     
+
       <Menu.Item
         key="blog"
         icon={
@@ -110,7 +112,6 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
       >
         <Link to={routes.PROFILE}>Profile</Link>
       </Menu.Item>
-      
     </Menu>
   );
 };

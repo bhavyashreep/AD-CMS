@@ -2,7 +2,7 @@ import Styled from "styled-components";
 
 const Div = Styled.div`
 .menu-title{
-    font-family: 'Proxima Nova';
+     ;
 font-style: normal;
 font-weight: 600;
 font-size: 16px;

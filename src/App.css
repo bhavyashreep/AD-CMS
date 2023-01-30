@@ -1,7 +1,17 @@
+@font-face {
+  font-family: proximaNova;
+  src: url("./presentation/common/Assets/Proxima_Nova_Font.woff");
+}
 .App {
   text-align: center;
+  font-family: proximaNova;
 }
-
+.ant-card-head {
+  border-bottom: unset !important;
+}
+.ant-select-selector {
+  min-width: 260px !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,15 +37,19 @@
 .App-link {
   color: #61dafb;
 }
- .ant-layout-sider .ant-layout-sider-children .ant-menu .ant-menu-submenu-inline .ant-menu-item a{
+.ant-layout-sider
+  .ant-layout-sider-children
+  .ant-menu
+  .ant-menu-submenu-inline
+  .ant-menu-item
+  a {
   padding-left: 0 !important;
 }
-.ant-menu-item a{
+.ant-menu-item a {
   padding-left: 0 !important;
 }
-.ant-btn-primary{
-  background: #B32642 !important;
-
+.ant-btn-primary {
+  background: #c81a57 !important;
 }
 
 @keyframes App-logo-spin {
@@ -45,4 +59,60 @@
   to {
     transform: rotate(360deg);
   }
+}
+.app-btn-primary {
+  border-radius: 44px !important;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #d2d2d2;
+  outline: 0;
+  font-size: 16px;
+  color: #212121;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 16px;
+  cursor: text;
+  top: 20px;
+}
+
+label,
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+.form__field:focus ~ .form__label {
+  color: #009788;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-bottom: 2px solid #009788;
 }

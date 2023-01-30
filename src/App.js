@@ -6,7 +6,7 @@ import { theme } from "./presentation/common/Theme/themeVariables";
 import { PrimaryLoadingIndicator } from "./presentation/common/UI/LoadingIndicator";
 import store from "./redux/store";
 import { Provider } from "react-redux";
-
+import "./App.css";
 //import static css to override antd
 import "./presentation/common/Style/style.css";
 import LayoutProvider from "./presentation/Layout";
@@ -18,7 +18,6 @@ import Profile from "./presentation/Profile";
 import ServiceRequests from "./presentation/ServiceRequests";
 import ViewService from "./presentation/ServiceRequests/overview/ViewService";
 import Dashboard from "./presentation/Dashboard";
-
 
 //component imports
 const Login = React.lazy(() => import("./presentation/Login"));
@@ -45,13 +44,9 @@ function App() {
             }
           >
             <Switch>
-                <Route exact path={routes.LOGIN} component={Login} />
+              <Route exact path={routes.LOGIN} component={Login} />
               <LayoutProvider>
-              <Route
-                  exact
-                  path={routes.DASHBOARD}
-                  component={Dashboard}
-                />
+                <Route exact path={routes.DASHBOARD} component={Dashboard} />
                 <Route
                   exact
                   path={routes.CUSTOMERLIST}
@@ -68,12 +63,12 @@ function App() {
                   path={routes.VIEWCUSTOMER}
                   component={ViewCustomer}
                 />
-                 <Route
+                <Route
                   exact
                   path={routes.SERVICEREQUESTS}
                   component={ServiceRequests}
                 />
-                  <Route
+                <Route
                   exact
                   path={routes.VIEWSERVICE}
                   component={ViewService}
@@ -83,11 +78,7 @@ function App() {
                   path={routes.PAYMENTLIST}
                   component={PaymentList}
                 />
-                  <Route
-                  exact
-                  path={routes.PROFILE}
-                  component={Profile}
-                />
+                <Route exact path={routes.PROFILE} component={Profile} />
               </LayoutProvider>
             </Switch>
           </Suspense>
