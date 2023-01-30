@@ -1,6 +1,9 @@
 import Styled from "styled-components";
 
 const Container = Styled.div`
+.side-bg{
+    object-fit:cover;
+}
 .ant-col-offset-8 {
     margin-left:0 !important;
 }

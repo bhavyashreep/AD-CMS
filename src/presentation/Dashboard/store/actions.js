@@ -7,7 +7,7 @@
 import { logError } from "../../common/Utils";
 import { message } from "antd";
 import firebase from "../../../config/api/firebase";
-import { reportData, allPayments } from "../../../infrastructure/reports";
+// import { reportData, allPayments } from "../../../infrastructure/reports";
 
 const expertData = firebase.database().ref("/expert");
 const usertData = firebase.database().ref("/users");

@@ -1,6 +1,17 @@
 import Styled from "styled-components";
 
 const Div = Styled.div`
+.menu-title{
+    font-family: 'Proxima Nova';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+/* identical to box height, or 138% */
+
+
+color: #595959;
+}
     position: relative;
     .profile{
         .ant-dropdown{
@@ -278,7 +289,7 @@ const Div = Styled.div`
         .logo_main{
             width:91px;
             max-width:unset;
-            object-fit:cover;
+            object-fit:contain;
             height:24.13px
         }
         button{

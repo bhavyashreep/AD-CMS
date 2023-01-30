@@ -1,6 +1,7 @@
 import Styled from "styled-components";
 
 const EChartCard = Styled.div`
+
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -823,11 +824,11 @@ const Pstates = Styled.div`
 `;
 
 const SessionChartWrapper = Styled.div`
-    min-height: 510px;
+    // min-height: 510px;
     background: #fff;
     border-radius: 10px;
     @media only screen and (max-width: 1599px){
-        min-height: 440px;
+        // min-height: 440px;
     }
     @media only screen and (max-width: 991px){
         min-height: auto;

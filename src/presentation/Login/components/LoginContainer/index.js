@@ -7,11 +7,11 @@ function LoginContainer() {
   return (
     <>
       <Container>
-        <div style={{width:"55%"}} className="ImageContainer">
+        <div style={{width:"50%"}} className="ImageContainer">
           {/* <h1>Admin Panel</h1>
           <div>
           </div> */}
-            <img src={Bg} alt="" />
+            <img className="side-bg" src={Bg} alt="" />
 
         </div>
         <div className="FormContainer">

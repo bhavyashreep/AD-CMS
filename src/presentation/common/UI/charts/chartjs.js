@@ -689,13 +689,13 @@ const ChartjsDonutChart = props => {
       <p>
         <span>{datasets[0].data.reduce((a, b) => a + b, 0)}</span>
       </p>
-      <Doughnut ref={ref} data={data} height={height} options={options} />
+      <Doughnut ref={ref} data={data} height={height} options={options}  />
     </div>
   );
 };
 
 ChartjsDonutChart.defaultProps = {
-  height: 120,
+  height: 190,
   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
   datasets: [
     {
@@ -736,7 +736,7 @@ const ChartjsDonutChart2 = props => {
 
   return (
     <div>
-      <Doughnut ref={ref} data={dataInfo} height={height} options={options} width={200} />
+      <Doughnut ref={ref} data={dataInfo} height={height} options={options} width={250} />
 
       <div className="align-center-v justify-content-between rd-labels">
         <div className="revenue-chat-label">
@@ -766,7 +766,7 @@ const ChartjsDonutChart2 = props => {
           })}
         </div>
         <div className="revenue-chat-percentage">
-          <span>45%</span>
+          {/* <span>45%</span> */}
           <span>45%</span>
           <span>45%</span>
         </div>

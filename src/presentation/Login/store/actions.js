@@ -26,23 +26,23 @@ const actions = {
   onSubmit:
     (values, history) =>
     async ({ dispatch }) => {
-      delete values["remeber"];
-      const loginRes = await onLogin(values);
-      console.log("response login", loginRes);
-      if (loginRes?.StatusCode === 6000) {
-        localStorage.setItem("token", loginRes?.data?.access_token);
+      // delete values["remeber"];
+      // const loginRes = await onLogin(values);
+      // console.log("response login", loginRes);
+      // if (loginRes?.StatusCode === 6000) {
+        // localStorage.setItem("token", loginRes?.data?.access_token);
 
-        const d = new Date();
-        let time = d.getDate();
-        let time2 = time + 5;
+        // const d = new Date();
+        // let time = d.getDate();
+        // let time2 = time + 5;
 
-        localStorage.setItem("tokenTime", time);
-        localStorage.setItem("expireTime", time2);
-        console.log("response login", loginRes?.data?.access_token);
+        // localStorage.setItem("tokenTime", time);
+        // localStorage.setItem("expireTime", time2);
+        // console.log("response login", loginRes?.data?.access_token);
 
 
         history.push(routes.CUSTOMERLIST);
-      }
+      // }
     },
 };
 

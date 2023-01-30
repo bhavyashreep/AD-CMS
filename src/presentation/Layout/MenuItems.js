@@ -67,41 +67,28 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
       overflowedIndicator={<FeatherIcon icon="more-vertical" />}
       openKeys={openKeys}
     >
-       {/* <Menu.Item
-        key="serviceReq"
-        icon={
-          <NavLink className="menuItem-icon" to={routes.SERVICEREQUESTS}>
-            <img src={experts} />
-          </NavLink>
-        }
-      >
-        <Link to={routes.SERVICEREQUESTS}>Service Requests</Link>
-      </Menu.Item> */}
-      {/* <SubMenu
-        key="sub1"
-        // icon={<ContactSupportIcon style={{ marginRight: "10px" }} />}
-        title="Manage "
-      > */}
-        {/* <Menu.Item
-          key="customer"
+        <Menu.Item
+          key="dashboard"
           icon={
-            <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
-              <img src={users} />
+            <NavLink className="menuItem-icon" to={routes.DASHBOARD}>
+              <img src={dashboard} />
             </NavLink>
           }
         >
-          <Link style={{paddingLeft:""}} to={routes.PAYMENTLIST}>Payment Manage</Link>
-        </Menu.Item> */}
+          <Link className="menu-title" to={routes.CUSTOMERLIST}>Dashboard</Link>
+        </Menu.Item> 
+    
         <Menu.Item
-          key="payment"
+          key="campaign"
           icon={
             <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
               <img src={experts} />
             </NavLink>
           }
         >
-          <Link to={routes.CUSTOMERLIST}>Customer Manage</Link>
-        </Menu.Item> <Menu.Item
+          <Link to={routes.CUSTOMERLIST}>Campaign</Link>
+        </Menu.Item> 
+        {/* <Menu.Item
           key="pincode"
           icon={
             <NavLink className="menuItem-icon" to={routes.REGIONLIST}>
@@ -110,7 +97,7 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
           }
         >
           <Link to={routes.REGIONLIST}>Pincode Manage</Link>
-        </Menu.Item>
+        </Menu.Item> */}
       {/* </SubMenu> */}
      
       <Menu.Item

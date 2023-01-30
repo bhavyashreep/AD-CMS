@@ -1774,7 +1774,7 @@ html[dir="rtl"] .sDash_upload-basic .sDash_upload-browse {
 /* page heading */
 
 .ant-page-header {
-  padding: 26px 30px 26px 30px !important;
+  /* padding: 26px 30px 26px 30px !important; */
 }
 
 .ant-page-header.header-boxed {
@@ -2341,7 +2341,7 @@ html[dir="rtl"]
 
 @media only screen and (max-width: 1199px) {
   .ant-page-header {
-    padding: 0 15px;
+    padding: 0 0;
   }
 }
 

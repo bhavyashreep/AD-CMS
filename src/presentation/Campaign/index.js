@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Row, Col, Popconfirm, Switch } from "antd";
 import FeatherIcon from "feather-icons-react";
-import CustomerTable from "./overview/CustomerTable";
+import CampaignTable from "./overview/CampaignTable";
 import { PageHeader } from "../common/UI/page-headers/page-headers";
 import { AutoComplete } from "../common/UI/autoComplete/autoComplete";
 import { Main, CardToolbox } from "../common/Style/styled";
@@ -13,7 +13,7 @@ import ViewCustomer from "./overview/ViewCustomer";
 // import EditUser from "./overview/EditUser";
 import { useHistory } from "react-router-dom";
 
-const UserList = () => {
+const CampaignList = () => {
   let history = useHistory()
   const [
     { customerList, searchData },
@@ -128,12 +128,12 @@ const UserList = () => {
       <CardToolbox>
         <PageHeader
           ghost
-          title="Customer Management"
+          title="Campaign List"
           subTitle={
             <>
-              <span className="title-counter">
-                {customerList?.length} Customers{" "}
-              </span>
+              {/* <span className="title-counter">
+                {customerList?.length} Campaigns{" "}
+              </span> */}
               <AutoComplete
                 onSearch={handleSearch}
                 placeholder="Search by Name"
@@ -142,23 +142,23 @@ const UserList = () => {
               />
             </>
           }
-          // buttons={[
-          //   <Button
-          //     onClick={() => setVisibleCreate({ value: true })}
-          //     key="1"
-          //     type="primary"
-          //     size="default"
-          //   >
-          //     <FeatherIcon icon="plus" size={16} /> Add New User
-          //   </Button>,
-          // ]}
+          buttons={[
+            <Button
+              onClick={() => setVisibleCreate({ value: true })}
+              key="1"
+              type="primary"
+              size="default"
+            >
+              <FeatherIcon icon="plus" size={16} />  New Campaign
+            </Button>,
+          ]}
         />
       </CardToolbox>
 
       <Main>
         <Row gutter={15}>
           <Col md={24}>
-            <CustomerTable usersTableData={customerData} />
+            <CampaignTable usersTableData={customerData} />
           </Col>
         </Row>
      
@@ -169,4 +169,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default CampaignList;

@@ -64,7 +64,7 @@ const SessionsByDevice = () => {
           //     </ul>
           //   </div>
           // }
-          title="Subscription"
+          title="Live Devices"
           // size="large"
         >
           {dvIsLoading ? (
@@ -74,17 +74,19 @@ const SessionsByDevice = () => {
           ) : (
             <div className="session-chart-inner">
               <ChartjsDonutChart
-                labels={["Desktop", "Mobiles", "Tablets"]}
+                labels={["Desktop", "Mobiles"]}
                 datasets={[
                   {
                     data: deviceState,
-                    backgroundColor: ["#20C997", "#5F63F2", "#FA8B0C"],
-                    total: "9,283",
+                    backgroundColor: ["#7551E9", "#FF7A2F", ],
+                    total: "9,83",
+                  
                   },
                 ]}
+                
               />
 
-              <SessionState className="session-wrap d-flex justify-content-center">
+              {/* <SessionState className="session-wrap d-flex justify-content-center">
                 <div className="session-single">
                   <div className="chart-label">
                     <span className="label-dot dot-success" />
@@ -103,7 +105,7 @@ const SessionsByDevice = () => {
                   <span>{deviceState[1]}</span>
                   <sub>30%</sub>
                 </div>
-              </SessionState>
+              </SessionState> */}
             </div>
           )}
         </Cards>

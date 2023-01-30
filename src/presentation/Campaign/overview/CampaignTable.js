@@ -1,23 +1,30 @@
 import React from "react";
-import { Table } from "antd";
+import { Button, Table } from "antd";
 import { UserTableStyleWrapper } from "../style";
 import { TableWrapper } from "../../common/Style/styled";
 import { Cards } from "../../common/UI/cards/frame/cards-frame";
+import FeatherIcon from "feather-icons-react";
 
-const UserListTable = ({usersTableData}) => {
+
+const CampaignTable = ({usersTableData}) => {
   console.log("dataaaa",usersTableData)
   const usersTableColumns = [
     {
-      title: "Customer Id",
+      title: "Campaigns",
       dataIndex: "id",
       key: "id",
     },
     {
-      title: "Name",
+      title: "Start Date",
       dataIndex: "name",
       key: "name",
     },{
-      title: "Email",
+      title: "End Date",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Status",
       dataIndex: "email",
       key: "email",
     },
@@ -37,7 +44,17 @@ const UserListTable = ({usersTableData}) => {
   };
 
   return (
-    <Cards headless>
+    <Cards  >
+     
+      {/* <Button
+        // onClick={() => setVisibleCreate({ value: true })}
+        key="1"
+        type="primary"
+        size="default"
+      >
+        <FeatherIcon icon="plus" size={16} />  New Campaign
+      </Button>, */}
+    
       <UserTableStyleWrapper>
         <TableWrapper className="table-responsive">
           <Table
@@ -59,4 +76,4 @@ const UserListTable = ({usersTableData}) => {
   );
 };
 
-export default UserListTable;
+export default CampaignTable;

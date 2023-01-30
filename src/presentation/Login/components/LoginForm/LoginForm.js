@@ -5,7 +5,7 @@ import { Form, Input, Button } from "antd";
 import { OverviewCard, AuthWrapper } from "./Styled.js";
 import { useUserStore } from "../../store";
 import { useHistory } from "react-router";
-import Logo from "../../../common/Assets/Images/Logo.svg";
+import Logo from "../../../common/Assets/Images/Logo.png";
 
 function LoginForm() {
   let history = useHistory();
@@ -24,7 +24,7 @@ function LoginForm() {
             form={form}
             onFinish={(values) => {
               onSubmit(values, history);
-              getCustomer();
+              // getCustomer();
             }}
           >
             <Form.Item

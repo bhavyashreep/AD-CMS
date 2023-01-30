@@ -2,7 +2,7 @@
 const routes = {
   INITIAL: "/",
   SIGNUP: "/signup",
-  // DASHBOARD :"/dashboard",
+  DASHBOARD :"/dashboard",
   CUSTOMERLIST :"/customerlist",
   REGIONLIST :"/regionlist",
   PINCODELIST:"/pincodelist/:id",

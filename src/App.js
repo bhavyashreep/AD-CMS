@@ -10,19 +10,20 @@ import { Provider } from "react-redux";
 //import static css to override antd
 import "./presentation/common/Style/style.css";
 import LayoutProvider from "./presentation/Layout";
-import ViewCustomer from "./presentation/Customer/overview/ViewCustomer";
+import ViewCustomer from "./presentation/Campaign/overview/ViewCustomer";
 import PaymentList from "./presentation/PaymentManage";
-import AuthLetter from "./presentation/Customer/overview/AuthLetter";
+
 import Profile from "./presentation/Profile";
-import ConsentLetter from "./presentation/Customer/overview/ConsentLetter";
 
 import ServiceRequests from "./presentation/ServiceRequests";
 import ViewService from "./presentation/ServiceRequests/overview/ViewService";
+import Dashboard from "./presentation/Dashboard";
+
 
 //component imports
 const Login = React.lazy(() => import("./presentation/Login"));
 // const Dashboard = React.lazy(() => import("./presentation/Dashboard"));
-const CustomerList = React.lazy(() => import("./presentation/Customer"));
+const CampaignList = React.lazy(() => import("./presentation/Campaign"));
 const RegionList = React.lazy(() => import("./presentation/Region"));
 const PincodeList = React.lazy(() => import("./presentation/Pincode"));
 
@@ -44,29 +45,17 @@ function App() {
             }
           >
             <Switch>
-              {/* {token === null ? ( */}
                 <Route exact path={routes.LOGIN} component={Login} />
-              {/* ) : (
-                <LayoutProvider>
-                  {" "}
-                  <Route
-                    exact
-                    path={routes.PAYMENTLIST}
-                    component={PaymentList}
-                  />
-                </LayoutProvider>
-              )} */}
-              {/* <Route exact path={routes.DASHBOARD} component={Dashboard} /> } */}
-
-              <Route exact path={routes.AUTHLETTER} component={AuthLetter} />
-              <Route exact path={routes.CONSENTLETTER} component={ConsentLetter} />
-
-
               <LayoutProvider>
+              <Route
+                  exact
+                  path={routes.DASHBOARD}
+                  component={Dashboard}
+                />
                 <Route
                   exact
                   path={routes.CUSTOMERLIST}
-                  component={CustomerList}
+                  component={CampaignList}
                 />
                 <Route exact path={routes.REGIONLIST} component={RegionList} />
                 <Route

@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "campaign_name": "campaign 1",
+      "start-date": "27/02/2023",
+      "end-date": "30/02/2023",
+      "status":"Active"
+    },
+    {
+        "id": 2,
+        "campaign_name": "campaign 2",
+        "start-date": "27/02/2023",
+        "end-date": "30/02/2023",
+        "status":"Active"
+    },
+    {
+        "id": 3,
+        "campaign_name": "campaign 3",
+        "start-date": "27/02/2023",
+        "end-date": "30/02/2023",
+        "status":"Active"
+    },
+    {
+        "id": 4,
+        "campaign_name": "campaign 4",
+        "start-date": "27/02/2023",
+        "end-date": "30/02/2023",
+        "status":"Active"
+    },
+    {
+        "id": 5,
+        "campaign_name": "campaign 5",
+      "start-date": "27/02/2023",
+      "end-date": "30/02/2023",
+      "status":"Active"
+    },
+    {
+        "id": 6,
+        "campaign_name": "campaign 6",
+      "start-date": "27/02/2023",
+      "end-date": "30/02/2023",
+      "status":"Active"
+    }
+]

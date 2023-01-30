@@ -43,6 +43,7 @@ const AuthWrapper = Styled.div`
        background:${({ theme }) => theme["primary-color"]};
        border:${({ theme }) => theme["primary-color"]};
        margin-top:24px;
+       border-radius:16px;
    
     }
     &.btn-create{

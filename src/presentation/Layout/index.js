@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Layout, Button, Row, Col } from "antd";
 import FeatherIcon from "feather-icons-react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../common/Assets/Images/Logo.svg";
+import logo from "../common/Assets/Images/Logo2.png";
 import { Div } from "./style";
 import MenuItems from "./MenuItems";
 import { leftIcon, rightIcon } from "../common/Assets/Icons";
@@ -162,7 +162,7 @@ export default class LayoutProvider extends Component {
                   <Row>
                     <Col md={12} xs={24}>
                       <span className="admin-footer__copyright">
-                       Home247
+                       AD-CMS
                       </span>
                     </Col>
                     <Col md={12} xs={24}>

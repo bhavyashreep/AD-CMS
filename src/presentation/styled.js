@@ -1,6 +1,46 @@
 import Styled from 'styled-components';
 
 const Main = Styled.div`
+.title{
+    font-family: 'Proxima Nova';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height, or 100% */
+
+
+color: rgba(34, 29, 32, 0.85);
+margin-bottom:37px;
+}
+.label{
+    font-family: 'Proxima Nova';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+// line-height: 57px;
+/* identical to box height, or 239% */
+
+letter-spacing: 0.429903px;
+
+color: rgba(0, 0, 0, 0.64);
+}
+.value{
+    font-family: 'Proxima Nova';
+font-style: normal;
+font-weight: 800;
+font-size: 40px;
+line-height: 57px;
+/* identical to box height, or 127% */
+
+letter-spacing: 0.429903px;
+
+color: #000000;
+}
+.cardContentCover{
+    display:flex;
+    margin-top:20px;
+}
     padding: 0px 30px 20px;
     min-height: 715px;
     background-color: rgb(244, 245, 247);

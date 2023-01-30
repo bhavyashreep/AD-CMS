@@ -5,7 +5,7 @@ const CardChartStyle = Styled.div`
     .ant-card{
         min-height: 500px;
         @media only screen and (max-width: 1599px){
-          min-height: 440px;
+          // min-height: 440px;
         }
         @media only screen and (max-width: 1450px){
           min-height: 410px;
