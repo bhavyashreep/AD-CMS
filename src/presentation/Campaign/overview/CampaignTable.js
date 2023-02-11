@@ -9,6 +9,12 @@ const CampaignTable = ({ usersTableData }) => {
   console.log("dataaaa", usersTableData);
   const usersTableColumns = [
     {
+      title: <input type="checkbox"></input>,
+      dataIndex: "key",
+      key: "key",
+      width: "19px",
+    },
+    {
       title: "Campaigns",
       dataIndex: "campaign",
       key: "campaign",
@@ -27,12 +33,6 @@ const CampaignTable = ({ usersTableData }) => {
       title: "Status",
       dataIndex: "status",
       key: "status",
-    },
-    {
-      title: "Actions",
-      dataIndex: "action",
-      key: "action",
-      width: "90px",
     },
   ];
 

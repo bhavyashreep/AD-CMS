@@ -4,6 +4,7 @@ const Main = Styled.div`
     padding: 0px 30px 20px;
     min-height: 715px;
     background-color:white;
+    box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.16);
     border-radius:24px;
     margin:24px;
     &.grid-boxed{

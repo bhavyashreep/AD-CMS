@@ -13,6 +13,9 @@ line-height: 24px;
 color: rgba(34, 29, 32, 0.85);
 margin-bottom:37px;
 }
+.ant-card {
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.16) !important;
+}
 .sub-title{
     font-size:14px;
     line-height:22px;

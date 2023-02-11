@@ -11,7 +11,7 @@ import Heading from "../common/UI/heading/heading";
 import ViewCustomer from "./overview/ViewCustomer";
 // import CreateUser from "./overview/CreateUser";
 // import EditUser from "./overview/EditUser";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const CampaignList = () => {
   let history = useHistory();
@@ -48,26 +48,35 @@ const CampaignList = () => {
       campaign: "New compaign",
       startDate: "23-09-2022",
       endDate: "22-10-2023",
+      id: "345345456",
     },
     {
       status: 1,
       campaign: "New compaign",
       startDate: "12-12-2023",
       endDate: "25-03-2024",
+      id: "459684567",
     },
     {
       status: 1,
       campaign: "New compaign",
       startDate: "03-03-2022",
       endDate: "02-04-2023",
+      id: "09873242",
     },
   ];
   const customerData = customerDataVal?.map((customer, index) => {
     console.log(customer);
     return {
-      key: index,
-      id: customer?.customer_id,
-      campaign: customer?.campaign,
+      key: (
+        <div>
+          <input type="checkbox"></input>
+        </div>
+      ),
+      id: customer?.id,
+      campaign: (
+        <Link to={`/campaignlist/${customer?.id}`}>{customer?.campaign}</Link>
+      ),
       startDate: customer?.startDate,
       endDate: customer?.endDate,
       status:

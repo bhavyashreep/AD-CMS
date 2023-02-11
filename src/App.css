@@ -37,6 +37,14 @@
 .App-link {
   color: #61dafb;
 }
+.ant-layout {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 244, 239, 0.16),
+      rgba(255, 244, 239, 0.16)
+    ),
+    #ffffff !important;
+}
 .ant-layout-sider
   .ant-layout-sider-children
   .ant-menu

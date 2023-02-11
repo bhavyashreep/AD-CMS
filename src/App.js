@@ -7,6 +7,8 @@ import { PrimaryLoadingIndicator } from "./presentation/common/UI/LoadingIndicat
 import store from "./redux/store";
 import { Provider } from "react-redux";
 import "./App.css";
+import "antd/dist/antd.css";
+// import "antd/dist/reset.css";
 //import static css to override antd
 import "./presentation/common/Style/style.css";
 import LayoutProvider from "./presentation/Layout";
@@ -17,14 +19,16 @@ import Profile from "./presentation/Profile";
 
 import ServiceRequests from "./presentation/ServiceRequests";
 import ViewService from "./presentation/ServiceRequests/overview/ViewService";
-import Dashboard from "./presentation/Dashboard";
 
 //component imports
 const Login = React.lazy(() => import("./presentation/Login"));
-// const Dashboard = React.lazy(() => import("./presentation/Dashboard"));
+const Dashboard = React.lazy(() => import("./presentation/Dashboard"));
 const CampaignList = React.lazy(() => import("./presentation/Campaign"));
 const RegionList = React.lazy(() => import("./presentation/Region"));
 const PincodeList = React.lazy(() => import("./presentation/Pincode"));
+const CampaignExpanded = React.lazy(() =>
+  import("./presentation/Campaign/components/expanded")
+);
 
 const token = localStorage.getItem("token");
 console.log("token in app js", token);
@@ -51,6 +55,11 @@ function App() {
                   exact
                   path={routes.CUSTOMERLIST}
                   component={CampaignList}
+                />
+                <Route
+                  exact
+                  path={routes.CAMPAIGNEXPANDED}
+                  component={CampaignExpanded}
                 />
                 <Route exact path={routes.REGIONLIST} component={RegionList} />
                 <Route
