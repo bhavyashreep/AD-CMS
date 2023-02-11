@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
 import { Row, Col, Popconfirm, Switch } from "antd";
 import FeatherIcon from "feather-icons-react";
-import CampaignTable from "./overview/CampaignTable";
-import { PageHeader } from "../common/UI/page-headers/page-headers";
-import { AutoComplete } from "../common/UI/autoComplete/autoComplete";
-import { Main, CardToolbox, CampaignWrap } from "../common/Style/styled";
-import { Button } from "../common/UI/buttons/buttons";
-import { useUserStore } from "./store";
-import Heading from "../common/UI/heading/heading";
-import ViewCustomer from "./overview/ViewCustomer";
+import CampaignTable from "../overview/adPlayListTable";
+import { PageHeader } from "../../common/UI/page-headers/page-headers";
+import { AutoComplete } from "../../common/UI/autoComplete/autoComplete";
+import { Main, CardToolbox } from "../../common/Style/styled";
+import { Button } from "../../common/UI/buttons/buttons";
+import { useUserStore } from "../store";
 // import CreateUser from "./overview/CreateUser";
 // import EditUser from "./overview/EditUser";
 import { Link, useHistory } from "react-router-dom";
@@ -75,9 +73,7 @@ const CampaignList = () => {
       ),
       id: customer?.id,
       campaign: (
-        <Link title="View Details" to={`/campaignlist/${customer?.id}`}>
-          {customer?.campaign}
-        </Link>
+        <Link to={`/campaignlist/${customer?.id}`}>{customer?.campaign}</Link>
       ),
       startDate: customer?.startDate,
       endDate: customer?.endDate,
@@ -140,53 +136,51 @@ const CampaignList = () => {
   return (
     <>
       <Main>
-        <CampaignWrap>
-          <CardToolbox>
-            <PageHeader
-              ghost
-              title="Campaign List"
-              subTitle={
-                <>
-                  {/* <span className="title-counter">
+        <CardToolbox>
+          <PageHeader
+            ghost
+            title="Ad Playlist"
+            subTitle={
+              <>
+                {/* <span className="title-counter">
                 {customerList?.length} Campaigns{" "}
               </span> */}
-                  {/* <AutoComplete
+                {/* <AutoComplete
                 onSearch={handleSearch}
                 placeholder="Search by Name"
                 width="100%"
                 patterns
               /> */}
-                </>
-              }
-              buttons={[
-                <div style={{ display: "flex" }}>
-                  <AutoComplete
-                    onSearch={handleSearch}
-                    placeholder="Input search text"
-                    width="100%"
-                    patterns
-                  />
-                  <Button
-                    onClick={() => setVisibleCreate({ value: true })}
-                    key="1"
-                    type="primary"
-                    size="default"
-                  >
-                    <FeatherIcon icon="plus" size={16} /> New Campaign
-                  </Button>
-                </div>,
-              ]}
-            />
-          </CardToolbox>
-          <Row gutter={15}>
-            <Col md={24}>
-              <CampaignTable usersTableData={customerData} />
-            </Col>
-          </Row>
+              </>
+            }
+            buttons={[
+              <div style={{ display: "flex" }}>
+                <AutoComplete
+                  onSearch={handleSearch}
+                  placeholder="Input search text"
+                  width="100%"
+                  patterns
+                />
+                <Button
+                  onClick={() => setVisibleCreate({ value: true })}
+                  key="1"
+                  type="primary"
+                  size="default"
+                >
+                  <FeatherIcon icon="plus" size={16} /> Add Media
+                </Button>
+              </div>,
+            ]}
+          />
+        </CardToolbox>
+        <Row gutter={15}>
+          <Col md={24}>
+            <CampaignTable usersTableData={customerData} />
+          </Col>
+        </Row>
 
-          {/* <CreateUser /> */}
-          {/* <EditUser /> */}
-        </CampaignWrap>
+        {/* <CreateUser /> */}
+        {/* <EditUser /> */}
       </Main>
     </>
   );

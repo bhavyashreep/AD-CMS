@@ -314,7 +314,7 @@ ul {
 /* progress bars */
 
 .progress-primary .ant-progress-bg {
-  background: #C81A57;
+  background: #c81a57;
 }
 .progress-secondery .ant-progress-bg {
   background: #65cf9e;
@@ -398,7 +398,7 @@ ul {
 }
 
 .ant-btn-white:hover {
-  color: #C81A57 !important;
+  color: #c81a57 !important;
   background-color: #fff !important;
   border-color: #fff;
 }
@@ -443,8 +443,8 @@ ul {
 }
 
 .ant-btn-dashed:hover {
-  color: #C81A57;
-  border: 1px dashed #C81A57;
+  color: #c81a57;
+  border: 1px dashed #c81a57;
 }
 
 .ant-btn-primary[disabled] {
@@ -514,7 +514,7 @@ ul {
 }
 
 .ant-picker-input > input::placeholder {
-  color: #C81A57!important;
+  color: #c81a57 !important;
 }
 
 /* Calendar Styles */
@@ -847,7 +847,6 @@ ul {
 .project-modal img {
   width: 240px;
 }
-
 
 .project-modal .projects-members {
   margin-top: -12px;
@@ -1368,7 +1367,7 @@ ul {
 }
 
 .ant-cascader-picker input::placeholder {
-  color: #C81A57;
+  color: #c81a57;
 }
 
 /* Comment Styles */
@@ -2227,7 +2226,6 @@ html[dir="rtl"]
 
 .ant-menu-dark .ant-menu-item a {
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.65) !important;
 }
 
 .ant-menu-dark .ant-menu-item a:hover {
@@ -2777,8 +2775,6 @@ html[dir="rtl"]
   padding-left: 10px;
 }
 
-
-
 li.active > .display {
   display: block;
 }
@@ -2843,20 +2839,18 @@ html[dir="rtl"] .ant-menu-vertical .ant-menu-submenu-title {
 .display ul:first-child {
   width: 30%;
 }
-.display .varHeight .label{
-  margin-bottom:14px;
+.display .varHeight .label {
+  margin-bottom: 14px;
   font-size: 14px;
   line-height: 19px;
-  color: #9299B8;
-
+  color: #9299b8;
 }
-.display .varHeight .value{
+.display .varHeight .value {
   font-size: 14px;
   line-height: 19px;
   color: #535768;
-  margin-bottom:14px;
+  margin-bottom: 14px;
 }
-
 
 li.active > .display {
   display: block;
@@ -2886,11 +2880,11 @@ li.active > .display {
   line-height: 24px;
   color: #000000;
 }
-.profileBody .top .email{
+.profileBody .top .email {
   font-size: 14px;
-line-height: 19px;
-color: #ADB4D2;
+  line-height: 19px;
+  color: #adb4d2;
 }
-.profileBody p{
+.profileBody p {
   margin-bottom: 0 !important;
 }

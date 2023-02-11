@@ -1261,6 +1261,8 @@ const CardToolbox = Styled.div`
             input{
                 height: 46px !important;
                 font-size: 14px;
+                background: rgba(0, 0, 0, 0.08)!important;
+
             }
         }
     }

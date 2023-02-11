@@ -69,6 +69,14 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
     >
       <Menu.Item
         key="dashboard"
+        style={{
+          backgroundColor: window.location.pathname.includes("/dashboard")
+            ? "#C81A57"
+            : "",
+          color: window.location.pathname.includes("/dashboard")
+            ? "white"
+            : "black",
+        }}
         icon={
           <NavLink className="menuItem-icon" to={routes.DASHBOARD}>
             <img src={dashboard} />
@@ -82,6 +90,14 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
 
       <Menu.Item
         key="campaign"
+        style={{
+          backgroundColor: window.location.pathname.includes("/campaign")
+            ? "#C81A57"
+            : "",
+          color: window.location.pathname.includes("/dashboard")
+            ? "white"
+            : "white",
+        }}
         icon={
           <NavLink className="menuItem-icon" to={routes.CUSTOMERLIST}>
             <img src={experts} />

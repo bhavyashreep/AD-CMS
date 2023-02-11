@@ -27,7 +27,7 @@ const CampaignList = React.lazy(() => import("./presentation/Campaign"));
 const RegionList = React.lazy(() => import("./presentation/Region"));
 const PincodeList = React.lazy(() => import("./presentation/Pincode"));
 const CampaignExpanded = React.lazy(() =>
-  import("./presentation/Campaign/components/expanded")
+  import("./presentation/Campaign/components/Expanded")
 );
 
 const token = localStorage.getItem("token");

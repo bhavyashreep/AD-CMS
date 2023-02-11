@@ -46,7 +46,7 @@ color: #595959;
         .ant-menu-sub.ant-menu-vertical{
             .ant-menu-item{
                 a{
-                    color: ${({ theme }) => theme["gray-color"]};
+                    color:white;
                 }
             }
         }
@@ -525,6 +525,9 @@ color: #595959;
                         }
                     }
                     &.ant-menu-item-selected{
+                        a{
+                            color:white;
+                        }
                         svg,
                         i{
                             color: ${({ theme }) => theme["primary-color"]};
