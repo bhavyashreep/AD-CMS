@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Popconfirm, Switch } from "antd";
 import FeatherIcon from "feather-icons-react";
 import CampaignTable from "./overview/CampaignTable";
@@ -15,6 +15,7 @@ import { Link, useHistory } from "react-router-dom";
 
 const CampaignList = () => {
   let history = useHistory();
+  const [deleteStatus, setdeleteStatus] = useState(false);
   const [
     { customerList, searchData },
     {
@@ -44,22 +45,25 @@ const CampaignList = () => {
   };
   const customerDataVal = [
     {
+      key: "12313223",
       status: 1,
-      campaign: "New compaign",
+      campaign: "New campaign1",
       startDate: "23-09-2022",
       endDate: "22-10-2023",
       id: "345345456",
     },
     {
+      key: "345350",
       status: 1,
-      campaign: "New compaign",
+      campaign: "New campaign2",
       startDate: "12-12-2023",
       endDate: "25-03-2024",
       id: "459684567",
     },
     {
+      key: "509324",
       status: 1,
-      campaign: "New compaign",
+      campaign: "New campaign3",
       startDate: "03-03-2022",
       endDate: "02-04-2023",
       id: "09873242",
@@ -68,11 +72,6 @@ const CampaignList = () => {
   const customerData = customerDataVal?.map((customer, index) => {
     console.log(customer);
     return {
-      key: (
-        <div>
-          <input type="checkbox"></input>
-        </div>
-      ),
       id: customer?.id,
       campaign: (
         <Link title="View Details" to={`/campaignlist/${customer?.id}`}>
@@ -166,21 +165,32 @@ const CampaignList = () => {
                     width="100%"
                     patterns
                   />
-                  <Button
-                    onClick={() => setVisibleCreate({ value: true })}
-                    key="1"
-                    type="primary"
-                    size="default"
-                  >
-                    <FeatherIcon icon="plus" size={16} /> New Campaign
-                  </Button>
+                  {!deleteStatus ? (
+                    <Button
+                      onClick={() => setVisibleCreate({ value: true })}
+                      key="1"
+                      type="primary"
+                      size="default"
+                    >
+                      <FeatherIcon icon="plus" size={16} /> New Campaign
+                    </Button>
+                  ) : (
+                    <Button type="danger" size="default">
+                      <FeatherIcon icon="trash-2" size={16} />
+                      Delete
+                    </Button>
+                  )}
                 </div>,
               ]}
             />
           </CardToolbox>
           <Row gutter={15}>
             <Col md={24}>
-              <CampaignTable usersTableData={customerData} />
+              <CampaignTable
+                usersTableData={customerData}
+                setdeleteStatus={setdeleteStatus}
+                deleteStatus={deleteStatus}
+              />
             </Col>
           </Row>
 

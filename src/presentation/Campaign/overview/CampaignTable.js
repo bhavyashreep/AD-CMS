@@ -5,15 +5,8 @@ import { TableWrapper } from "../../common/Style/styled";
 import { Cards } from "../../common/UI/cards/frame/cards-frame";
 import FeatherIcon from "feather-icons-react";
 
-const CampaignTable = ({ usersTableData }) => {
-  console.log("dataaaa", usersTableData);
+const CampaignTable = ({ usersTableData, setdeleteStatus, deleteStatus }) => {
   const usersTableColumns = [
-    {
-      title: <input type="checkbox"></input>,
-      dataIndex: "key",
-      key: "key",
-      width: "19px",
-    },
     {
       title: "Campaigns",
       dataIndex: "campaign",
@@ -38,9 +31,17 @@ const CampaignTable = ({ usersTableData }) => {
 
   const rowSelection = {
     getCheckboxProps: (record) => ({
-      disabled: record.name === "Disabled User",
-      name: record.name,
+      // disabled: record.campaign === "Disabled User",
+      id: record.id,
     }),
+    onChange: (selectedRowKeys, selectedRows) => {
+      setdeleteStatus(!deleteStatus);
+      console.log(
+        `selectedRowKeys: ${selectedRowKeys}`,
+        "selectedRows: ",
+        selectedRows
+      );
+    },
   };
 
   return (
@@ -58,7 +59,7 @@ const CampaignTable = ({ usersTableData }) => {
         <TableWrapper className="table-responsive">
           <Table
             className="span-flex"
-            // rowSelection={rowSelection}
+            rowSelection={rowSelection}
             dataSource={usersTableData}
             columns={usersTableColumns}
             pagination={{

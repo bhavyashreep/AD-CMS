@@ -20,13 +20,12 @@ const what = ({ editStatus }) => {
                 <p>Playlist Type</p>
                 <Select
                   disabled={!editStatus}
-                  defaultValue="lucy"
+                  defaultValue="Type1"
                   // onChange={handleChange}
                   options={[
-                    { value: "jack", label: "Jack" },
-                    { value: "lucy", label: "Lucy" },
-                    { value: "Yiminghe", label: "yiminghe" },
-                    { value: "disabled", label: "Disabled", disabled: true },
+                    { value: "Type1", label: "Type1" },
+                    { value: "Type2", label: "Type2" },
+                    { value: "Type3", label: "Type3" },
                   ]}
                 />
               </span>
@@ -43,10 +42,10 @@ const what = ({ editStatus }) => {
                 <p>Date Range</p>
                 <RangePicker
                   disabled={!editStatus}
-                  defaultValue={[
-                    dayjs("2015/01/01", dateFormat),
-                    dayjs("2015/01/01", dateFormat),
-                  ]}
+                  // defaultValue={[
+                  //   dayjs("2015/01/01", dateFormat),
+                  //   dayjs("2015/01/01", dateFormat),
+                  // ]}
                   format={dateFormat}
                 />
               </span>
@@ -54,13 +53,16 @@ const what = ({ editStatus }) => {
                 <p>Day of the week</p>
                 <Select
                   disabled={!editStatus}
-                  defaultValue="lucy"
+                  defaultValue="sunday"
                   // onChange={handleChange}
                   options={[
-                    { value: "jack", label: "Jack" },
-                    { value: "lucy", label: "Lucy" },
-                    { value: "Yiminghe", label: "yiminghe" },
-                    { value: "disabled", label: "Disabled", disabled: true },
+                    { value: "monday", label: "Monday" },
+                    { value: "tuesday", label: "Tuesday" },
+                    { value: "wednesday", label: "Wednesday" },
+                    { value: "thursday", label: "Thursday" },
+                    { value: "friday", label: "Friday" },
+                    { value: "saturday", label: "Saturday" },
+                    { value: "sunday", label: "Sunday" },
                   ]}
                 />
               </span>

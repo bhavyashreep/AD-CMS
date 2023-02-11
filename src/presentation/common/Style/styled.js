@@ -762,6 +762,46 @@ const Main = Styled.div`
         }
     }
 `;
+const CampaignSide = Styled.div`
+    display:flex;
+    flex-direction:column;
+    background:white;
+    padding:32px 24px;
+    width:30%;
+    img{
+        padding-bottom:39px;
+        width:335px;
+    }
+    h2{
+        padding-bottom:26px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        color: rgba(34, 29, 32, 0.85);
+    }
+    .select-wrap{
+        display:flex;
+        align-items:center;
+        p{
+            margin-bottom:0;
+            padding-right:14px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+        }
+        .ant-select-selector{
+            border-radius:8px;
+        }
+        .ant-picker-range{
+            border-radius:8px;
+        }
+        input{
+            width:84px;
+            border-radius:8px;
+            border-color:grey;
+        }
+    }
+`;
 const SubMain = Styled.div`
     padding: 0px 30px 20px;
     min-height: 715px;
@@ -2634,4 +2674,5 @@ export {
   BorderWrapper,
   SubMain,
   CampaignWrap,
+  CampaignSide,
 };
