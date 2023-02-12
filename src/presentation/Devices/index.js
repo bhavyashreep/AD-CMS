@@ -6,9 +6,9 @@ import { Main, MapCard } from "../styled";
 // import { useDashboardStore } from "./store";
 import DeviceList from "./overview/DeviceList";
 
-const CardGroup = lazy(() => import("./overview/CardGroup"));
-const AccountGroup = lazy(() => import("./overview/AccountGroup"));
-const Subscription = lazy(() => import("./overview/SessionsByDevice"));
+const CardGroup = lazy(() => import("./overview/OfflineDevices"));
+const AccountGroup = lazy(() => import("./overview/Map"));
+const Subscription = lazy(() => import("./overview/OnlineDevices"));
 
 const Dashboard = () => {
   const data = [
@@ -127,7 +127,9 @@ const Dashboard = () => {
         </Row>
         <Row gutter={15}>
           <Col md={24}>
-            <DeviceList />
+            <Cards headless>
+              <DeviceList />
+            </Cards>
           </Col>
         </Row>
 
