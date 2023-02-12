@@ -29,6 +29,7 @@ const PincodeList = React.lazy(() => import("./presentation/Pincode"));
 const CampaignExpanded = React.lazy(() =>
   import("./presentation/Campaign/components/Expanded")
 );
+const Devices = React.lazy(() => import("./presentation/Devices"));
 
 const token = localStorage.getItem("token");
 console.log("token in app js", token);
@@ -61,6 +62,7 @@ function App() {
                   path={routes.CAMPAIGNEXPANDED}
                   component={CampaignExpanded}
                 />
+                <Route exact path={routes.DEVICES} component={Devices} />
                 <Route exact path={routes.REGIONLIST} component={RegionList} />
                 <Route
                   exact

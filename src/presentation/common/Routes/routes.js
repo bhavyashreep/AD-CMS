@@ -4,6 +4,7 @@ const routes = {
   DASHBOARD: "/dashboard",
   CUSTOMERLIST: "/campaignlist",
   CAMPAIGNEXPANDED: "/campaignlist/:id",
+  DEVICES: "/devices",
   REGIONLIST: "/regionlist",
   PINCODELIST: "/pincodelist/:id",
   EXPERTS: `/experts`,

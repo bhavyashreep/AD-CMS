@@ -1,5 +1,18 @@
 import Styled from "styled-components";
 
+const MapCard = Styled.div`
+.ant-card{
+    border-radius:24px!important;
+    .ant-card-body{
+        padding:0!important;
+        border-radius:24px!important;
+    }
+}
+
+.ant-card{
+    height:96%!important;
+}
+`;
 const Main = Styled.div`
 .title{
      ;
@@ -1815,4 +1828,5 @@ export {
   TableWrapper,
   ImportStyleWrap,
   ExportStyleWrap,
+  MapCard,
 };

@@ -94,7 +94,7 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
           backgroundColor: window.location.pathname.includes("/campaign")
             ? "#C81A57"
             : "",
-          color: window.location.pathname.includes("/dashboard")
+          color: window.location.pathname.includes("/campaign")
             ? "white"
             : "white",
         }}
@@ -120,13 +120,21 @@ const MenuItems = ({ darkMode, topMenu, events }) => {
 
       <Menu.Item
         key="blog"
+        style={{
+          backgroundColor: window.location.pathname.includes("/devices")
+            ? "#C81A57"
+            : "",
+          color: window.location.pathname.includes("/devices")
+            ? "white"
+            : "white",
+        }}
         icon={
-          <NavLink className="menuItem-icon" to={routes.PROFILE}>
+          <NavLink className="menuItem-icon" to={routes.DEVICES}>
             <img src={users} />
           </NavLink>
         }
       >
-        <Link to={routes.PROFILE}>Profile</Link>
+        <Link to={routes.DEVICES}>Devices</Link>
       </Menu.Item>
     </Menu>
   );
